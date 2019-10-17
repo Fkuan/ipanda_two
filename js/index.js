@@ -1,4 +1,4 @@
-//自定义滚动条
+﻿//自定义滚动条
 (function ($) {
   $(window).on("load", function () {
     $(".list-box").mCustomScrollbar({
@@ -16,7 +16,7 @@ $(window).on("load", function () {
   threeStart();
   setTimeout(function () {
     $(".list-container").fadeIn();
-    $(".guide").fadeIn();
+    //$(".guide").fadeIn();
     $(".guideBtn").fadeIn();
   }, 2800);
 });
