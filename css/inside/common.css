@@ -1,0 +1,48 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a,em,img,
+strong,i, dl, dt, dd, ol, ul, li, form, label, table,tbody,
+tfoot, thead, tr, th, td ,textarea,input{
+    margin:0;
+    padding:0;
+}
+html,body{
+    height:100%;
+    width:100%;
+    font-family: 'Microsoft YaHei';
+    font-size:18px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:normal;
+}
+a{
+    text-decoration:none;
+}
+i {
+    font-style: normal;
+}
+img{
+    border: none;
+    vertical-align: middle;
+}
+li{
+    list-style: none;
+}
+div{
+    box-sizing:border-box;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* 为兼容IE6,IE7，因为ie6,ie7不能用after伪类 */
+.clearfix{
+    zoom:1;
+}
+.fr{
+    float:right;
+}
+.fl{
+    float:left;
+}

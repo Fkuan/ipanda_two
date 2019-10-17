@@ -1,0 +1,2083 @@
+@-ms-viewport {
+    width: device-width;
+}
+
+@media only screen and (min-device-width:800px) {
+    html {
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .site>span{
+        display: inline-block;
+        width: 4.98%;
+        height: 24px;
+        background: url("../img/map/weizhi_icon.png") no-repeat;
+        background-size: 100% 100%;
+        margin:5px 2.62%;
+    }
+    .main_left{  
+        width:381px;
+        height: 93.38%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        transition: left 0.5s linear;
+        -webkit-transition: left 0.5s linear;
+        -moz-transition: left 0.5s linear;
+        -ms-transition: left 0.5s linear;
+        -o-transition: left 0.5s linear;
+    }
+    .main_leftHidden{
+        left:-381px;
+        
+    }
+    .mapbox{
+        width: 381px;
+        height: 314px;
+        position: relative;
+        background: url("../img/map/mapbox.png") no-repeat;      
+    }
+    .mapFrame{
+        box-sizing: border-box;
+        width: 373px;
+        height: 304px;
+        position: absolute;
+        z-index:5;
+        left:3px;
+        top: 5px;
+        background: url("../img/map/map-bg.png") no-repeat;
+        
+        overflow: hidden;
+    }
+    .icon_list{
+        position: absolute;
+        top: 0px;
+        right:-52px;
+        width: 48px;
+        height: 80%;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+    }
+    .icon_list li{
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+    }
+    .icon_list li:nth-child(1){
+        background: url("../img/icon_four/shouye.png") no-repeat;
+        background-position: 100% 100%;
+    }
+    .icon_list li:nth-child(2){
+        background: url("../img/icon_four/like.png") no-repeat;
+        background-position: 100% 100%;
+    }
+    .icon_list li:nth-child(3){
+        background: url("../img/icon_four/voice.png") no-repeat;
+        background-position: 100% 100%;
+    }
+    .mute{
+        background: url("../img/icon_four/mute.png") no-repeat;
+        background-position: 100% 100%;
+    }
+    .icon_list li:nth-child(4){
+        background: url("../img/icon_four/share.png") no-repeat;
+        background-position: 100% 100%;
+    }
+    .icon_list li:nth-child(1):hover{
+        background: url("../img/icon_four/shouye-hover.png") no-repeat;
+        background-size: 100% 100%;
+      
+    }
+    .icon_list li:nth-child(2):hover{
+        background: url("../img/icon_four/like-hover.png") no-repeat;
+        background-size: 100% 100%;
+       
+    }
+    .mapbox .icon_list .click_zan_icon2{
+    
+        background: url("../img/icon_four/like-hover.png") no-repeat;
+        background-size: 100% 100%;  
+    }
+    .icon_list li:nth-child(3):hover{
+        background: url("../img/icon_four/voice-hover.png") no-repeat;
+        background-size: 100% 100%;
+      
+    }
+    .mute:hover{
+        background: url("../img/icon_four/mute-hover.png") no-repeat;
+        background-size: 100% 100%;
+       
+    }
+    .icon_list li:nth-child(4):hover{
+        background: url("../img/icon_four/share-hover.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .main_left_content ul{
+        margin: 0px 10px;
+        height: calc(100% - 4vw);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .main_left_content{
+        padding: 24px;
+        width: 422px;
+        box-sizing: border-box;
+        height:calc(100% - 314px);
+        background: url("../img/live_nav/main_left_content_bg.png") no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    .fast_navigation_title{
+        position: relative;
+        width: 324px;
+        height: 60px;
+        background: url("../img/live_nav/fn_bg.png") no-repeat;
+        margin: 0px 10px 24px;
+        text-align: center;
+        line-height: 60px;
+    }
+    .fast_navigation_title img{
+        position: absolute;
+        left: -12px;
+        top: -17px;
+    }
+    .main_left_content li{
+        width: 323px;
+        height: 35px;
+        box-sizing: border-box;
+        background:url("../img/live_nav/fn_li_1.png") no-repeat;
+        text-align: center;
+        line-height: 35px;
+        padding: 0 10px;
+        margin: 9px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .main_left_content .li_change{
+        background:url("../img/live_nav/fn_li_2.png") no-repeat; 
+    }
+    .main_left_content li>span{
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #e9ac04;
+        line-height: 24px;
+    }
+    .main_left_content .li_change span{
+        background:url("../img/live_nav/fn_live.png") no-repeat; 
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: #e97004;
+        line-height: 24px;
+    }
+    .main_left_content li p{
+        color: #000;
+        width: 250px;
+        text-align: center;
+    }
+    .main_left_content .li_change p{
+        color: #e9b640;
+    }
+    .main_left_content li i{
+        width: 24px;
+        height: 12px;
+       background:url("../img//live_nav/fn_down.png") no-repeat;
+       background-size: 100% 100%;
+    }
+    .main_left_content .li_change i{
+        background:url("../img//live_nav/fn_up.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .video{
+        position: relative;
+        display: none;
+        width: 323px;
+        height: 178px;
+        cursor: pointer;
+    }
+    .video img:nth-child(1){
+        width: 323px;
+        height: 178px;
+        border-radius: 18px;
+    }
+    .main_left_btn{
+        width: 40px;
+        height: 114px;
+        position: absolute;
+        right: 0;
+        top: 108px;
+        z-index: 5;
+        background:url("../img/live_nav/1-1.png") no-repeat center;
+        cursor: pointer;
+    } 
+    .main_left_btn:hover{
+       
+        background:url("../img/live_nav/1-2.png") no-repeat center;
+       
+    } 
+    .btnright{
+        background:url("../img/live_nav/2-1.png") no-repeat center;
+    }
+    
+    .btnright:hover{
+       
+        background:url("../img/live_nav//2-2.png") no-repeat center;
+       
+    } 
+    /* .main_right{
+        width: 380px;
+        height:88.15%;
+        position: absolute;
+        right: 16px;
+        bottom: 0;
+        z-index: 1;
+    } */
+    .notice{
+        width:380px;
+        height: 54px;
+        position: absolute;
+        right:16px;
+        top: 90px;
+        padding: 0;
+    }
+    .notice span{
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        background: #FFFFFF;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        position: relative;
+        z-index: 10;
+    }
+    @keyframes marquee {
+        0% {
+            transform: translateX(300px);
+        }
+        100% {
+            transform: translateX(-300px); 
+        }
+    }
+    .gb_text {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: translatey(18%); 
+        display: block;
+        width: 100%;
+        height: 41px;
+        text-align: center;
+        position: absolute;
+        overflow: hidden;
+        background:#f7f9fb;
+        border-radius: 41px;
+        
+        
+    }
+    .notice p{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        
+        width: 361px;
+        height: 41px;
+        text-align: center;
+        line-height: 41px;
+        color: #000;
+        -webkit-animation: marquee 10s linear infinite;
+        animation: marquee 10s linear infinite;
+    }
+    .speak{
+        position: absolute;
+        bottom: 235px;
+        right: 33px;
+        width: 300px;
+        height:46.29%;
+        /* 56.9%; */
+        display: none;
+    }
+    .introduce,.panda_say{
+        box-sizing:border-box;
+        position: absolute;
+        bottom:17vh;
+        left: 0;
+        width: 287px;
+        min-height: 32vh;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        color: #000;
+        padding: 20px;
+    }   
+    .panda_say{
+        position: absolute;
+        bottom:45px;
+        left: 0;
+        min-height: 11.5vh;
+    }
+    .think{
+        position: absolute;
+        bottom:0;
+        left: 35px;
+        z-index: 5;
+    }
+    .panda img:nth-child(1){
+        width: 182px;
+    }
+    .panda img{ 
+        position: absolute;
+        bottom:0px;
+        right: 95px;
+        z-index: 1;
+    }
+    .panda .haveSay{
+        bottom:216px;
+        right: 61px;
+        z-index: 2;
+        cursor: pointer;
+        display: none;
+    }
+}
+@media screen and (min-width: 992px) and (max-width:1200px){
+    .site>span{
+        display: inline-block;
+        width: 4.98%;
+        height: 2.2vw;
+        background: url("../img/map/weizhi_icon.png") no-repeat;
+        background-size: 100% 100%;
+        margin:5px 2.62%;
+       
+    }
+    .main_left{
+        height: 93.38%;
+        width: 31.75%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        transition: left 0.5s linear;
+        -webkit-transition: left 0.5s linear;
+        -moz-transition: left 0.5s linear;
+        -ms-transition: left 0.5s linear;
+        -o-transition: left 0.5s linear;
+    }
+    .main_leftHidden{
+        left:-31.75%;
+    }
+    .mapbox{
+        width: 100%;
+        height: 26.16vw;
+        position: absolute;
+        bottom:calc(100% - 26.16vw - 60px);
+        left: 0;
+        background: url("../img/map/mapbox.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .mapFrame{
+        box-sizing: border-box;
+        width: 97.9%;
+        height:25.33vw;
+        position: absolute;
+        z-index:5;
+        left:3px;
+        top: 5px;
+        background: url("../img/map/map-bg.png") no-repeat;
+        background-size: 100% 100%;
+        overflow: hidden;
+    }
+    .icon_list{
+        position: absolute;
+        top: 0px;
+        right:-4.3vw;
+        width: 4vw;
+        height: 80%;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+    }
+    .icon_list li{
+        width: 4vw;
+        height: 4vw;
+        cursor: pointer;
+    }
+    .icon_list li:nth-child(1){
+        background: url("../img/icon_four/shouye.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list li:nth-child(2){
+        background: url("../img/icon_four/like.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list li:nth-child(3){
+        background: url("../img/icon_four/voice.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .mute{
+        background: url("../img/icon_four/mute.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list li:nth-child(4){
+        background: url("../img/icon_four/share.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list li:nth-child(1):hover{
+        background: url("../img/icon_four/shouye-hover.png") no-repeat;
+        background-size: 100% 100%;
+      
+    }
+    .icon_list li:nth-child(2):hover{
+        background: url("../img/icon_four/like-hover.png") no-repeat;
+        background-size: 100% 100%;
+       
+    }
+    .icon_list li:nth-child(3):hover{
+        background: url("../img/icon_four/voice-hover.png") no-repeat;
+        background-size: 100% 100%;
+      
+    }
+    .mute:hover{
+        background: url("../img/icon_four/mute-hover.png") no-repeat;
+        background-size: 100% 100%;
+       
+    }
+    .icon_list li:nth-child(4):hover{
+        background: url("../img/icon_four/share-hover.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list .click_zan_icon2{
+    
+        background: url("../img/icon_four/like-hover.png") no-repeat;
+        background-size: 100% 100%;  
+    }
+    .main_left_content{
+        padding: 24px;
+        width: 110.76%;
+        box-sizing: border-box;
+        height:calc(100% - 26.16vw - 60px);
+        background: url("../img/live_nav/main_left_content_bg.png") no-repeat;
+        background-size: cover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .fast_navigation_title{
+        position: relative;
+        width: 76.77%;
+        height: 5vw;
+        background: url("../img/live_nav/fn_bg.png") no-repeat;
+        background-size: 100% 100%;
+        margin: 0px 10px 24px;
+        text-align: center;
+        line-height:5vw;
+    }
+    .fast_navigation_title img{
+        width: 21.91%;
+        position: absolute;
+        left: -19px;
+        top: -12px;
+    }
+    .main_left_content ul{
+        margin: 0px 10px;
+        height: calc(100% - 8vw);
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .main_left_content li{
+        width: 26.91vw;
+        height: 35px;
+        box-sizing: border-box;
+        background:url("../img/live_nav/fn_li_1.png") no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        line-height: 35px;
+        padding: 0 0.83vw;
+        margin: 0.8vw 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .main_left_content li>span{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #e9ac04;
+    line-height: 24px;
+}
+.main_left_content .li_change span{
+    background:url("../img/live_nav/fn_live.png") no-repeat; 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #e97004;
+    line-height: 24px;
+}
+.main_left_content li p{
+    color: #000;
+    width: 150px;
+    text-align: center;
+}
+.main_left_content .li_change p{
+    color: #e9b640;
+}
+.main_left_content li i{
+    width: 24px;
+    height: 12px;
+   background:url("../img//live_nav/fn_down.png") no-repeat;
+   background-size: 100% 100%;
+}
+.main_left_content .li_change i{
+    background:url("../img//live_nav/fn_up.png") no-repeat;
+    background-size: 100% 100%;
+}
+    .main_left_content .li_change{
+        background:url("../img/live_nav/fn_li_2.png") no-repeat; 
+        background-size: 100% 100%;
+    }
+    .video{
+        position: relative;
+        display: none;
+        width: 26.91vw;
+        height:14.83vw;
+        cursor: pointer;
+    }
+    .video img:nth-child(1){
+        width: 26.91vw;
+        height:14.83vw;
+        border-radius: 18px;
+    }
+    .main_left_btn{
+        width: 3.33vw;
+        height:9.5vw;
+        position: absolute;
+        right: 0;
+        top:calc(35 * 0.25);
+        z-index: 5;
+        background:url("../img/live_nav/1-1.png") no-repeat center;
+        cursor: pointer;
+    }
+    .main_left_btn:hover{
+       
+        background:url("../img/live_nav/1-2.png") no-repeat center;
+       
+    } 
+    .btnright{
+        background:url("../img/live_nav/2-1.png") no-repeat center;
+    }
+    
+    .btnright:hover{
+       
+        background:url("../img/live_nav//2-2.png") no-repeat center;
+       
+    } 
+    /* .main_right{
+        width: 31.66vw;
+        height:88.15%;
+        position: absolute;
+        right:16px;
+        bottom: 0;
+        z-index: 1;
+    } */
+    .notice{
+        width: 31.66vw;
+        height: 54px;
+        position: absolute;
+        right:16px;
+        top: 90px;
+    }
+    
+    .notice span{
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        background: #FFFFFF;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        position: relative;
+        z-index: 10;
+    }
+    
+    @keyframes marquee {
+        0% {
+            transform: translateX(300px);
+        }
+        100% {
+            transform: translateX(-300px); 
+        }
+    }
+    .gb_text {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: translatey(18%); 
+        display: block;
+        width: 100%;
+        height: 41px;
+        text-align: center;
+        position: absolute;
+        overflow: hidden;
+        background:#f7f9fb;
+        border-radius: 41px;
+        
+        
+    }
+    .notice p{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        
+        width: 361px;
+        height: 41px;
+        text-align: center;
+        line-height: 41px;
+        color: #000;
+        -webkit-animation: marquee 10s linear infinite;
+        animation: marquee 10s linear infinite;
+    }
+    .speak{
+        position: absolute;
+        bottom: 235px;
+        right: 33px;
+        width: 25vw;
+        height:46.29%;
+        display: none;
+    }
+    
+    .introduce,.panda_say{
+        box-sizing:border-box;
+        position: absolute;
+        bottom: 17vh;
+        left: 0;
+        width: 23.91vw;
+        min-height: 32vh;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        color: #000;
+        padding: 20px;
+    }
+    
+    .panda_say{
+        position: absolute;
+        bottom: 45px;
+        left: 0;
+        min-height: 108px;
+    }
+    .think{
+        position: absolute;
+        bottom:0px;
+        left: 1.6vw;
+    
+    }
+    .panda img{
+        position: absolute;
+        bottom:0px;
+        right: 8vw;
+        z-index: 1;
+    }
+    .panda img:nth-child(1){
+        width: 182px;
+    }
+    .panda .haveSay{
+        bottom:216px;
+        right: 5.66vw;
+        z-index: 2;
+        cursor: pointer;
+        display: none;
+    }
+    
+}
+@media screen and (min-width: 768px) and (max-width:992px){
+    .site>span{
+        display: inline-block;
+        width: 4.98%;
+        height: 2.2vw;
+        background: url("../img/map/weizhi_icon.png") no-repeat;
+        background-size: 100% 100%;
+        margin:5px 2.62%;
+    }
+    .main_left{
+        height: 93.38%;
+        width: 31.75%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        transition: left 0.5s linear;
+        -webkit-transition: left 0.5s linear;
+        -moz-transition: left 0.5s linear;
+        -ms-transition: left 0.5s linear;
+        -o-transition: left 0.5s linear;
+    }
+    .main_leftHidden{
+        left:-31.75%;
+    }
+    .mapbox{
+        width: 100%;
+        height: 26.16vw;
+        position: absolute;
+        bottom:calc(100% - 26.16vw - 60px);
+        left: 0;
+        background: url("../img/map/mapbox.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .mapFrame{
+        box-sizing: border-box;
+        width: 97.9%;
+        height:25.33vw;
+        position: absolute;
+        z-index:5;
+        left:3px;
+        top: 5px;
+        background: url("../img/map/map-bg.png") no-repeat;
+        background-size: 100% 100%;
+        overflow: hidden;
+    }
+    .icon_list{
+        position: absolute;
+        top: 0px;
+        right:-4.3vw;
+        width: 4vw;
+        height: 80%;
+        /*height: 26.16vw;*/
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+    }
+    .icon_list li{
+        width: 4vw;
+        height: 4vw;
+        cursor: pointer;
+    }
+    .icon_list li:nth-child(1){
+        background: url("../img/icon_four/shouye.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list li:nth-child(2){
+        background: url("../img/icon_four/like.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list li:nth-child(3){
+        background: url("../img/icon_four/voice.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .mute{
+        background: url("../img/icon_four/mute.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list li:nth-child(4){
+        background: url("../img/icon_four/share.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list li:nth-child(1):hover{
+        background: url("../img/icon_four/shouye-hover.png") no-repeat;
+        background-size: 100% 100%;
+      
+    }
+    .icon_list li:nth-child(2):hover{
+        background: url("../img/icon_four/like-hover.png") no-repeat;
+        background-size: 100% 100%;
+       
+    }
+    .icon_list li:nth-child(3):hover{
+        background: url("../img/icon_four/voice-hover.png") no-repeat;
+        background-size: 100% 100%;
+      
+    }
+    .mute:hover{
+        background: url("../img/icon_four/mute-hover.png") no-repeat;
+        background-size: 100% 100%;
+       
+    }
+    .icon_list li:nth-child(4):hover{
+        background: url("../img/icon_four/share-hover.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon_list .click_zan_icon2{
+    
+        background: url("../img/icon_four/like-hover.png") no-repeat;
+        background-size: 100% 100%;  
+    }
+    .main_left_content{
+        padding: 24px;
+        width: 110.76%;
+        box-sizing: border-box;
+        height:calc(100% - 26.16vw - 60px);
+        background: url("../img/live_nav/main_left_content_bg.png") no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .fast_navigation_title{
+        position: relative;
+        width: 76.77%;
+        height: 5vw;
+        background: url("../img/live_nav/fn_bg.png") no-repeat;
+        background-size: 100% 100%;
+        margin: 0px 10px 24px;
+        text-align: center;
+        line-height:5vw;
+    }
+    .fast_navigation_title img{
+        width: 21.91%;
+        position: absolute;
+        left: -19px;
+        top: -8px;
+    }
+    .main_left_content ul{
+        margin: 0px 10px;
+        height: calc(100% - 8vw);
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .main_left_content li{
+        width: 26.91vw;
+        height: 35px;
+        box-sizing: border-box;
+        background:url("../img/live_nav/fn_li_1.png") no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        line-height: 35px;
+        padding: 0 0.83vw;
+        margin: 0.8vw 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .main_left_content li>span{
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #e9ac04;
+        line-height: 24px;
+    }
+    .main_left_content .li_change span{
+        background:url("../img/live_nav/fn_live.png") no-repeat; 
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: #e97004;
+        line-height: 24px;
+    }
+    .main_left_content li p{
+        color: #000;
+        width: 150px;
+        text-align: center;
+    }
+    .main_left_content .li_change p{
+        color: #e9b640;
+    }
+    .main_left_content li i{
+        width: 24px;
+        height: 12px;
+       background:url("../img//live_nav/fn_down.png") no-repeat;
+       background-size: 100% 100%;
+    }
+    .main_left_content .li_change i{
+        background:url("../img//live_nav/fn_up.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .main_left_content .li_change{
+        background:url("../img/live_nav/fn_li_2.png") no-repeat; 
+        background-size: 100% 100%;
+    }
+    .video{
+        position: relative;
+        display: none;
+        width: 26.91vw;
+        height:14.83vw;
+        cursor: pointer;
+    }
+    .video img:nth-child(1){
+        width: 26.91vw;
+        height:14.83vw;
+        border-radius: 18px;
+    }
+    .main_left_btn{
+        width: 3.33vw;
+        height: 9.5vw;
+        position: absolute;
+        right: 0;
+        top: calc(35vw * 0.3);;
+        z-index: 5;
+        background:url("../img/live_nav/1-1.png") no-repeat center;
+        cursor: pointer;
+    }
+    .main_left_btn:hover{
+       
+        background:url("../img/live_nav/1-2.png") no-repeat center;
+       
+    } 
+    .btnright{
+        background:url("../img/live_nav/2-1.png") no-repeat center;
+    }
+    
+    .btnright:hover{
+       
+        background:url("../img/live_nav//2-2.png") no-repeat center;
+       
+    } 
+    /* .main_right{
+        width: 31.66vw;
+        height:88.15%;
+        position: absolute;
+        right:16px;
+        bottom: 0;
+        z-index: 1;
+    } */
+    .notice{
+        width: 31.66vw;
+        height: 54px;
+        position: absolute;
+        right:16px;
+        top: 90px;
+    }
+    .notice span{
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        background: #FFFFFF;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%; 
+        position: relative;
+        z-index: 10;
+      
+    }
+    
+    @keyframes marquee {
+        0% {
+            transform: translateX(300px);
+        }
+        100% {
+            transform: translateX(-300px); 
+        }
+    }
+    .gb_text {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: translatey(18%); 
+        display: block;
+        width: 100%;
+        height: 41px;
+        text-align: center;
+        position: absolute;
+        overflow: hidden;
+        background:#f7f9fb;
+        border-radius: 41px;
+        
+        
+    }
+    .notice p{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        
+        width: 361px;
+        height: 41px;
+        text-align: center;
+        line-height: 41px;
+        color: #000;
+        -webkit-animation: marquee 10s linear infinite;
+        animation: marquee 10s linear infinite;
+    }
+    .speak{
+        position: absolute;
+        bottom: 18vw;
+        right: 2vw;
+        width: 25vw;
+        height:46.29%;
+        display: none;
+    }
+    .introduce,.panda_say{
+        box-sizing:border-box;
+        position: absolute;
+        bottom: 17vh;
+        left: 0;
+        width: 23.91vw;
+        min-height: 32vh;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        color: #000;
+        padding: 20px;
+    }
+    
+    .panda_say{
+        position: absolute;
+        bottom:45px;
+        left: 0;
+        min-height: 108px;
+    }
+    .think{
+        position: absolute;
+        bottom:0px;
+        left: 1.6vw;
+    
+    }
+    .panda img:nth-child(1){
+        width: 15.16vw;
+        position: absolute;
+        bottom:0px;
+        right: 8vw;
+        z-index: 1;
+    }
+    .panda .haveSay{
+        position: absolute;
+        bottom:18vw;
+        right: 5.66vw;
+        z-index: 2;
+        cursor: pointer;
+        display: none;
+    } 
+   
+}
+@media screen and ( max-width: 768px){
+
+}
+.main_left,.main_right{
+    display: none;
+}
+*{margin: 0;padding: 0;}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: #000000;
+    position: relative;
+}
+li{
+    list-style: none;
+}
+.nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.nav img{
+    width: 100%;
+}
+/* .main_left{
+    display: none;
+    width:381px;
+    height: 875px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: left 0.5s linear;
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    -ms-transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+} */
+/* .main_leftHidden{
+    left:-381px;
+} */
+/* .mapbox{
+    width: 381px;
+    height: 314px;
+    position: relative;
+    background: url("../img/map/mapbox.png") no-repeat;
+    
+} */
+/* .mapFrame{
+    box-sizing: border-box;
+    width: 373px;
+    height: 304px;
+    position: absolute;
+    z-index:5;
+    left:3px;
+    top: 5px;
+    background: url("../img/map/map-bg.png") no-repeat;
+    
+    overflow: hidden;
+} */
+.mapType{
+    width: 540px;
+    height: 304px;
+    position: relative;
+    left:0;
+    top: 0;
+    transform:matrix(1, 0, 0, 1, -83, 0);
+    
+}
+.mapbox .mapType .map_2D_list{
+    width:540px;
+    height: 304px;
+    background: url("../img/map/cover.png") no-repeat;
+    background-size: 100% 100%;
+    z-index:10;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+}
+/* 全屏地图 */
+.full_map{
+    width: 100%;
+    height: 100%;
+    background: url("../img/map/map.jpg") no-repeat;
+    background-size: 100% 100%;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 11;
+}
+.lookMap{
+    width: 233px;
+    height: 334px;
+    background: url("../img/map/kanditu-x.gif") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 86px;
+    bottom: 50px;
+    z-index:13;
+}
+.compass{
+    width: 67px;
+    height: 86px;
+    background: url("../img/map/zhibei.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 8.53%;
+    right:5.2%;
+    z-index:13;
+}
+.map_cover{
+    width: 86.75%;
+    height: 48.33vw;
+    background: url("../img/map/cover.png") no-repeat;
+    background-size: 100% 100%;
+    z-index:12;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+}
+.map_cover li{
+    width:8.4%;
+    height:5.01% ;
+    background: url("../img/map/map_icon/CNA.png") no-repeat;
+   background-size: 100% 100%;
+}
+.map_cover li div{
+  
+    width:21.42%;
+    height:78.72%;
+    background: url("../img/map/map_icon/pandaH.png") no-repeat;
+   background-size: 100% 100%;
+}
+.map_cover .oneA{
+    width:9.54%;
+    background: url("../img/map/map_icon/1A.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 30%;
+    top : 58%;
+}
+.map_cover .oneA div{
+    position: absolute;
+    left: 46%;
+    top : -98%;
+}
+.map_cover .oneA:hover{
+    background: url("../img/map/map_icon/1AS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .oneA:hover div,.oneA div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+
+.map_cover .oneB{
+    width:9.54%;
+    background: url("../img/map/map_icon/1B.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 33%;
+    top : 40%;
+}
+.map_cover .oneB div{
+    position: absolute;
+    left: 45%;
+    top : 104%;
+}
+.map_cover .oneB:hover{
+    background: url("../img/map/map_icon/1BS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .oneB:hover div,.oneB div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+.map_cover .CNA{
+    background: url("../img/map/map_icon/CNA.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 57%;
+    top : 57%;
+}
+.map_cover .CNA div{
+    position: absolute;
+    left: -22%;
+    top : 23%;
+}
+.map_cover .CNA:hover{
+    background: url("../img/map/map_icon/CNAS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .CNA:hover div,.CNA div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+.map_cover .CNB{
+    background: url("../img/map/map_icon/CNB.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 53%;
+    top : 69%;
+}
+.map_cover .CNB div{
+    position: absolute;
+    left: 46%;
+    top : -98%;
+}
+.map_cover .CNB:hover{
+    background: url("../img/map/map_icon/CNBS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .CNB:hover div,.CNB div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+
+.map_cover .YNA{
+    background: url("../img/map/map_icon/YNA.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left:46%;
+    top :50%;
+}
+.map_cover .YNA div{
+    position: absolute;
+    left: 101%;
+    top : -1%;
+}
+.map_cover .YNA:hover{
+    background: url("../img/map/map_icon/YNAS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .YNA:hover div,.YNA div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+.map_cover .YNB{
+    background: url("../img/map/map_icon/YNB.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 44%;
+    top : 55%;
+}
+.map_cover .YNB div{
+    position: absolute;
+    left: 105%;
+    top : -6%;
+}
+.map_cover .YNB:hover{
+    background: url("../img/map/map_icon/YNBS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .YNB:hover div,.YNB div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+.map_cover .MA{
+    background: url("../img/map/map_icon/MA.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 48%;
+    top : 34%;
+}
+.map_cover .MA div{
+    position: absolute;
+    left: 40%;
+    top : 100%;
+}
+.map_cover .MA:hover{
+    background: url("../img/map/map_icon/MAS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .MA:hover div,.MA div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+.map_cover .MB{
+    background: url("../img/map/map_icon/MB.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 43%;
+    top : 44%;
+}
+.map_cover .MB div{
+    position: absolute;
+    left: 102%;
+    top : -2%;
+}
+.map_cover .MB:hover{
+    background: url("../img/map/map_icon/MBS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .MB:hover div,.MB div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+.map_cover .YA{
+    background: url("../img/map/map_icon/YA.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 59%;
+    top : 39%;
+}
+.map_cover .YA div{
+    position: absolute;
+    left: -23%;
+    top : 10%;
+}
+.map_cover .YA:hover{
+    background: url("../img/map/map_icon/YAS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .YA:hover div,.YA div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+.map_cover .YB{
+    background: url("../img/map/map_icon/YB.png") no-repeat;
+   background-size: 100% 100%;
+    position: absolute;
+    left: 58%;
+    top : 46%;
+}
+.map_cover .YB div{
+    position: absolute;
+    left: -23%;
+    top : 1%;
+}
+.map_cover .YB:hover{
+    background: url("../img/map/map_icon/YBS.png") no-repeat;
+   background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .YB:hover div,.YB div:hover{
+    width:26.42%;
+    height:108.72%;
+    cursor: pointer;
+}
+
+.map_cover .T{
+    width: 7%;
+    height: 5%;
+    background: url("../img/map/map_icon/T.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 68%;
+    top : 56%;
+}
+.map_cover .T:hover{
+    background: url("../img/map/map_icon/TS.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;  
+}
+.map_cover .DM{
+    width: 6%;
+    height: 5%;
+    background: url("../img/map/map_icon/DM.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 62%;
+    top : 81%;
+}
+.map_cover .DM:hover{
+    background: url("../img/map/map_icon/DMS.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+.map_cover .DXMBWG{
+    width: 12%;
+    height: 6%;
+    background: url("../img/map/map_icon/DXMBWG.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 61%;
+    top : 74%;
+}
+.map_cover .DXMBWG:hover{
+    background: url("../img/map/map_icon/DXMBWGS.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+   
+}
+
+.full_close{
+    width: 52px;
+    height: 53px;
+    background: url(../img/map/xx.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 8.53%;
+    right:5.2%;
+    cursor: pointer;
+    z-index: 110;
+    display: none;
+}
+.full_close:hover{
+    background: url(../img/map/xx2.png) no-repeat;
+}
+.site{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    background: url("../img/map/map_weizhi_bg.png") no-repeat;
+    background-size: 100% 100%;
+     
+}
+/* .site>span{
+    display: inline-block;
+    width: 4.98%;
+    height: 2.2vw;
+    background: url("../img/map/weizhi_icon.png") no-repeat;
+    background-size: 100% 100%;
+    margin:5px 2.62%;
+} */
+.site p{
+    position: absolute;
+    bottom: 8px;
+    left: 38px;
+    width: 86.61%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color:#000;
+}
+.scaling{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 32px;
+    height: 106px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    background: url("../img/map/sufang.png") no-repeat;
+    cursor: pointer;
+}
+.bigClick{
+    background: url("../img/map/fangda.png") no-repeat;
+}
+.smallClick{
+    background: url("../img/map/suoxiao.png") no-repeat;
+}
+.scaling span{
+    width: 30px;
+    height: 37px;
+}
+.scaling span:nth-child(2){
+    height: 31px;
+}
+.change{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 93px;
+    height: 22px;
+    background: url("../img/map/to3D.png") no-repeat;
+    cursor: pointer;
+}
+.change:hover{
+    background: url("../img/map/hoverto3D.png") no-repeat;
+
+}
+/*.three3D{*/
+    /*display: inline-block;*/
+    /*width: 34px;*/
+    /*height: 22px;*/
+    /*cursor: pointer;*/
+/*}*/
+#map3D{
+    display: none;
+}
+/*.two_to_th{*/
+    /*background:url("../img/map/change_3D_hover.png") no-repeat;*/
+   /**/
+/*}*/
+/*.th_to_two{*/
+    /*background:url("../img/map/chuange_2D_hover.png") no-repeat; */
+    /**/
+/*}*/
+/* .icon_list{
+    position: absolute;
+    top: 0px;
+    right:-52px;
+    width: 48px;
+    height: 314px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+.icon_list li{
+    width: 48px;
+    height: 48px;
+}
+.icon_list li:nth-child(1){
+    background: url("../img/shouye.png") no-repeat;
+    background-position: 100% 100%;
+}
+.icon_list li:nth-child(2){
+    background: url("../img/like.png") no-repeat;
+    background-position: 100% 100%;
+}
+.icon_list li:nth-child(3){
+    background: url("../img/voice.png") no-repeat;
+    background-position: 100% 100%;
+}
+.mute{
+    background: url("../img/mute.png") no-repeat;
+    background-position: 100% 100%;
+}
+.icon_list li:nth-child(4){
+    background: url("../img/share.png") no-repeat;
+    background-position: 100% 100%;
+} */
+.zanPic{
+    position: absolute;
+    right:0px;
+    top: 0;
+    height: 10px;
+    width: 10px;
+}
+.icon_list .zan_icon{
+    position: relative;
+}
+
+/* .main_left_content{
+    padding: 24px;
+    width: 422px;
+    box-sizing: border-box;
+    height:calc(100% - 314px);
+    background: url("../img/live_nav/main_left_content_bg.png") no-repeat;
+    background-size: cover;
+    position: relative;
+} */
+/* .fast_navigation_title{
+    position: relative;
+    width: 324px;
+    height: 60px;
+    background: url("../img/live_nav/fn_bg.png") no-repeat;
+    margin: 0px 10px 24px;
+    text-align: center;
+    line-height: 60px;
+}
+.fast_navigation_title img{
+    position: absolute;
+    left: -12px;
+    top: -17px;
+} */
+/*********重置滚动条样式**********/
+
+.mCSB_draggerRail{
+    width:6px !important;
+    background-color:#ffffff!important;
+}
+.mCSB_dragger_bar{
+    background-color: #fed530!important;
+    width:12px !important;
+    height:12px !important;
+    border-radius: 50% !important;
+}
+
+.mCustomScrollBox>.mCSB_scrollTools{
+    height:90% !important;
+    top:20px !important;
+    right: 5px !important;
+}
+.mCSB_scrollTools .mCSB_dragger {
+    height: auto !important;
+}
+
+/* .main_left_content ul{
+    margin: 0px 10px;
+    height: calc(100% - 0.26vw - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+} */
+
+
+/* .main_left_content li{
+    width: 323px;
+    height: 35px;
+    box-sizing: border-box;
+    background:url("../img/live_nav/fn_li_1.png") no-repeat;
+    text-align: center;
+    line-height: 35px;
+    padding: 0 10px;
+    margin: 9px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+} */
+.main_left_content li:hover p{
+    /* color: #e9ac04; */
+    color: #fff;
+    
+}
+/* .main_left_content .li_change{
+    background:url("../img/live_nav/fn_li_2.png") no-repeat; 
+} */
+
+
+/* .main_left_content li>span{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #e9ac04;
+    line-height: 24px;
+}
+.main_left_content .li_change span{
+    background:url("../img/live_nav/fn_live.png") no-repeat; 
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #e97004;
+    line-height: 24px;
+}
+.main_left_content li p{
+    color: #000;
+    width: 250px;
+    text-align: center;
+}
+.main_left_content .li_change p{
+    color: #e9b640;
+}
+.main_left_content li i{
+    width: 24px;
+    height: 12px;
+   background:url("../img//live_nav/fn_down.png") no-repeat;
+  
+} */
+.main_left_content .li_change i{
+    background:url("../img//live_nav/fn_up.png") no-repeat;
+    
+}
+/* .video{
+    position: relative;
+    display: none;
+    width: 323px;
+    height: 178px;
+    cursor: pointer;
+}
+.video img:nth-child(1){
+    width: 323px;
+    height: 178px;
+    border-radius: 18px;
+} */
+/* .video img:nth-child(4){
+    position: absolute;
+    top: -32px;
+    left:328px;
+} */
+.video a img:nth-child(1){
+    position: absolute;
+    top: 0;
+    left:0;
+    display: none;
+}
+.video a img:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.video:hover  a img:nth-child(1){
+    display: block;
+}
+.video:hover a img:nth-child(2){
+    display: block;
+}
+/* .main_left_btn{
+    width: 40px;
+    height: 114px;
+    position: absolute;
+    left: 382px;
+    top: 108px;
+    z-index: 5;
+    background:url("../img/live_nav/main_left_btn.png") no-repeat center;
+    cursor: pointer;
+} */
+/* .main_right{
+    width: 380px;
+    height:826px;
+    position: absolute;
+    right: 16px;
+    bottom: 0;
+    display:none;
+} */
+/* .notice{
+    width: 100%;
+    height: 54px;
+    position: relative;
+}
+.notice span{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background: #FFFFFF;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+}
+
+.notice p{
+    position: absolute;
+    top: 7px;
+    left: 17px;
+    background:#f7f9fb;
+    width: 361px;
+    height: 41px;
+    border-radius: 41px;
+    text-align: center;
+    line-height: 41px;
+    color: #000;
+} */
+/* .notice .gb_text{
+    animation:myfirst infinite  5s;
+	-moz-animation:myfirst infinite  5s; /* Firefox   火狐*/
+	/* -webkit-animation:myfirst infinite  5s; Safari and Chrome  谷歌 */
+    /* -o-animation:myfirst infinite  5s;Opera */
+  
+/* }  */ 
+/* @keyframes myfirst
+	{
+		0%   {left:0px;}
+		10%  {left:-100px;}
+		20%  {left:-100px;}
+		30%  {left:-200px;}
+		40%  {left:-200px;}
+		50%  {left:-300px;}
+		60%  {left:-300px;}
+		70%  {left:-400px;}
+		80%  {left:-400px;}
+		90%  {left:0px;}
+		100% {left:0px;}
+	} */
+/* .speak{
+    position: absolute;
+    bottom: 260px;
+    left: 73px;
+    width: 300px;
+    height: 470px;
+    display: none;
+}
+.introduce,.panda_say{
+    box-sizing:border-box;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 287px;
+    min-height: 300px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    color: #000;
+    padding: 20px;
+}
+
+.panda_say{
+    position: absolute;
+    top:362px;
+    left: 0;
+    min-height: 108px;
+} */
+/* .panda{
+    position: relative;
+} */
+.yy{
+    width: 294px;
+    height: 60px;
+    background: url("../img/introduce/yy.png") no-repeat;
+    background-size:100% 100%;
+    position: absolute;
+    right: 34px;
+    bottom: 0;
+    z-index: 1;
+}
+.close{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+}
+
+/* .think{
+    position: absolute;
+    bottom:-45px;
+    left: 35px;
+
+}
+.panda img{
+    position: absolute;
+    bottom:0px;
+    left: 128px;
+}
+.panda .haveSay{
+    bottom:216px;
+    left: 295px;
+    display: none;
+} */
+/* 操作盘 */
+.operation_board_box{
+
+    width: 402px;
+    height: 224px ;
+    position: absolute;
+    left: 50%;
+    bottom: 13%;
+    z-index: 1;
+    margin-left: -201px;
+    margin-bottom: -112px;
+    /* transform: translate(-50%, 100%); */
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+.operation_board_box .arrow_up{
+    width: 162px;
+    height: 59px;
+    background: url("../img/operation_board/arrow-up.png") no-repeat center;
+    background-size:100% 100%;
+    cursor: pointer;
+}
+.operation_board_box .arrow_up:hover{
+    background: url("../img/operation_board/arrow-up-active.png") no-repeat center;
+    
+}
+.arrow_middle{
+    width: 100%;
+    height: 38px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin: 5px 0;
+}
+.arrow_middle .add{
+    width: 30px;
+    height: 30px;
+    background: url("../img/operation_board/add.png") no-repeat center;
+    background-size:100% 100%;
+    cursor: pointer;
+    margin: 0 15px;
+}
+.arrow_middle .add:hover{
+    background: url("../img/operation_board/add-hover.png") no-repeat center;
+    
+}
+.arrow_middle .auto{
+    width: 204px;
+    height: 38px;
+    background: url("../img/operation_board/auto.png") no-repeat center;
+    background-size:100% 100%;
+    cursor: pointer;
+}
+
+.arrow_middle .auto:hover{
+    background: url("../img/operation_board/auto-hover.png") no-repeat center;
+ 
+}
+.auto_stop,.arrow_middle .on{
+    width: 204px;
+    height: 38px;
+    background: url("../img/operation_board/auto-stop.png") no-repeat center;
+    background-size:100% 100%;
+    cursor: pointer;
+}
+.auto_stop:hover, .arrow_middle .on:hover{
+    background: url("../img/operation_board/auto-stop-hover.png") no-repeat center;
+
+}
+.arrow_middle .reduce{
+    width: 30px;
+    height: 30px;
+    background: url("../img/operation_board/reduce.png") no-repeat center;
+    background-size:100% 100%;
+    cursor: pointer;
+    margin: 0 15px;
+}
+.arrow_middle .reduce:hover{
+    background: url("../img/operation_board/reduce_hover.png") no-repeat center;
+    
+}
+
+.operation_board_box .arrow_down{
+    width: 162px;
+    height: 59px;
+    background: url("../img/operation_board/arrow-down.png") no-repeat center;
+    background-size:100% 100%;
+    cursor: pointer;
+}
+.operation_board_box .arrow_down:hover{
+    background: url("../img/operation_board/arrow-down-active.png") no-repeat center;
+}
+.ripple {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.ripple img{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+.indoor{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 620px;
+    height: 331px;
+    display: none;
+    background:url("../img/map/motaikuang/Mbg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.sleepPic{
+    position: absolute;
+    left: 10px;
+    top: -86px;
+    width: 186px;
+    height: 125px;
+    background:url("../img/map/motaikuang/shuijiao-s.gif") no-repeat;
+    background-size: 100% 100%;
+}
+.goIndoorClose{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 60px;
+    height: 63px;
+    background:url("../img/map/motaikuang/MX.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.goIndoorClose:hover{
+    background:url("../img/map/motaikuang/MX-hover.png") no-repeat;
+    background-size: 100% 100%;
+}
+.indoor_list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+
+}
+.indoor_list li{
+  width: 521px;
+  height: 44px;
+  margin: 15px;
+  cursor: pointer;
+}
+.indoor_list li:nth-child(1){
+    background:url("../img/map/motaikuang/1.png") no-repeat;
+    background-size: 100% 100%;
+}
+.indoor_list li:nth-child(2){
+    background:url("../img/map/motaikuang/2.png") no-repeat;
+    background-size: 100% 100%;  
+}
+.indoor_list li:nth-child(3){
+    background:url("../img/map/motaikuang/3.png") no-repeat;
+    background-size: 100% 100%;
+}
+.indoor_list li:nth-child(1):hover{
+    background:url("../img/map/motaikuang/1-1.png") no-repeat;
+    background-size: 100% 100%;
+}
+.indoor_list li:nth-child(2):hover{
+    background:url("../img/map/motaikuang/2-1.png") no-repeat;
+    background-size: 100% 100%;  
+}
+.indoor_list li:nth-child(3):hover{
+    background:url("../img/map/motaikuang/3-1.png") no-repeat;
+    background-size: 100% 100%;
+}

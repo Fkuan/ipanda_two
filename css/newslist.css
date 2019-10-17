@@ -1,0 +1,184 @@
+.main{
+    width: 1200px;
+
+    margin: auto;
+}
+.main_head{
+    width: 1200px;
+    height: 116px;
+    margin: auto;
+    background:#f6f6f8;;
+    position: relative;
+    border-bottom: 1px solid #00b677;
+    margin-bottom: 9px;
+}
+.main_head img{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-160%, -70%);
+}
+.main_head h1{
+    text-align: center;
+    line-height: 116px;
+}
+.newsClose{
+    display: inline-block;
+    position: absolute;
+    right: -80px;
+    top: 40px;
+    width: 42px;
+    height: 43px;
+    background: url("../img/pandanews/XX.png") no-repeat;
+}
+.main_list li{
+    height: 166px;
+    background:url("../img/pandanews/xuxian.png") no-repeat;
+    background-position: left bottom;
+    padding: 40px 0;
+    /* cursor: pointer; */
+}
+.main_list li h3{
+    cursor: pointer;
+}
+.pandaPic{
+    width: 260px;
+    height: 165px;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+.tvPlay{
+    position: absolute;
+    left: 15px;
+    bottom: 12px;
+}
+.pandadContent{
+    width: 904px;
+    height: 165px;
+    float: right;
+    position: relative;
+}
+/* .pandadContent h3{
+    font-style: 30px;
+} */
+.main_list .pandadContent h3:hover{
+    color: #00b677;
+}
+.pandadContent p{
+    line-height: 22px;
+    margin: 20px 0;
+}
+.newsTime{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.operatingBox{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 272px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.operatingBox div{
+    width: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+/* .operatingBox div:hover span:nth-child(2){
+    font-weight: 600;
+} */
+.shareBox:hover .share{
+    background:url("../img/pandanews/share-1.png") no-repeat;
+    background-size: 100% 100%; 
+}
+.collectionBox:hover .collection{
+    background:url("../img/pandanews/shoucang-1.png") no-repeat;
+    background-size: 100% 100%; 
+}
+.thumbBox:hover .thumb{
+    background:url("../img/pandanews/zan-1.png") no-repeat;
+    background-size: 100% 100%; 
+}
+.share{
+    background:url("../img/pandanews/share.png") no-repeat;
+    background-size: 100% 100%; 
+    width: 21px;
+    height: 21px;
+}
+.collection{
+    background:url("../img/pandanews/shoucang.png") no-repeat;
+    background-size: 100% 100%; 
+    width: 20px;
+    height: 19px;
+}
+.thumb{
+    background:url("../img/pandanews/zan.png") no-repeat;
+    background-size: 100% 100%; 
+    width: 21px;
+    height: 21px;
+}
+.gungunRecommend{
+    width: 1200px;
+    height: 689px;
+    position: relative;
+}
+.gungunRecommend .left{
+    position: absolute;
+    bottom: 0;
+    left: -89px;
+}
+.gungunRecommend .right{
+    position: absolute;
+    bottom: 0;
+    right: -90px;
+}
+.gungunRecommend h3{
+    margin-top: 64px;
+    line-height: 86px;
+}
+.recommendContent{
+    width: 1200px;
+   
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.recommendContent dl{
+    width: 285px;
+    height: 233px;
+    cursor: pointer;
+}
+.recommendContent dd span{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background:url("../img/pandanews/stop.png") no-repeat;
+}
+.recommendContent dd {
+    font-size: 16px;
+    margin: 9px 0;
+}
+.recommendContent dl:hover dd{
+    color:#00b677;
+}
+.recommendContent dl:hover dd span{
+    background:url("../img/pandanews/stophover.png") no-repeat;
+}
+.topBack{
+    width: 49px;
+    height: 49px;
+    position: fixed;
+    right: 260px;
+    bottom: 350px;
+    background:url("../img/pandanews/backtop.png") no-repeat;
+    display: none;
+}
+.topBack:hover{
+    background:url("../img/pandanews/backtophover.png") no-repeat;
+}

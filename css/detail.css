@@ -1,0 +1,31 @@
+/* detail */
+
+.main_head{
+    height: 120px;
+    padding: 42px 0;
+}
+.main_head h1{
+    text-align: center;
+    line-height: 74px
+    
+}
+.main_head p{
+    text-align: center;
+    line-height: 46px;
+}
+
+.pandaVideo img{
+    width: 1200px;
+}
+/* .pandaTV dl{
+    margin: 10px 0;
+} */
+.pandaTV dt{
+    margin: 10px 0;
+    font-size: 18px;
+}
+.pandaTV dd{
+    margin: 10px 0;
+    font-size: 16px;
+    text-indent:32px;
+}

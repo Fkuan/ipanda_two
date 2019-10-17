@@ -1,0 +1,25 @@
+*{margin: 0;padding: 0;}
+li{
+    list-style: none;
+}
+a {
+    text-decoration:none; 
+    color:#000;
+}
+html,body{
+    width: 100%;
+    overflow-X: hidden;
+    position: relative;
+}
+/* .nav img{
+    width: 100%;
+}
+.footer img{
+    width: 100%;
+} */
+
+body{
+    margin:0;
+    touch-action: none;
+    background:#f6f6f8;
+}

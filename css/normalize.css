@@ -1,0 +1,259 @@
+@charset "UTF-8";
+#cnzz_stat_icon_1274806223 {
+    display: none !important;
+}
+
+
+/*css 初始化 */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+}
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset,
+img,
+input,
+button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select,
+input {
+    vertical-align: middle;
+}
+
+textarea {
+    resize: none;
+}
+
+
+/*防止拖动*/
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+
+table {
+    border-collapse: collapse;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+    /*IE/7/6*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s,
+i,
+em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+select,
+input,
+textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    /*font: 12px/150% "Microsoft YaHei","\5b8b\4f53",Arial, Verdana;*/
+    font: 0.16rem/150% "微软雅黑",Arial, Verdana ;
+    font-family: "Microsoft YaHei","微软雅黑", Arial, Verdana;
+    color: #666;
+    background: #fff
+}
+
+
+/*公共类*/
+
+.w {
+    /*版心 提取 */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*图标*/
+
+i.icons {
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+
+/*a 标签颜色*/
+
+a {}
+
+a:link {
+    color: #333;
+}
+
+
+/* 未被访问的链接 */
+
+a:visited {
+    color: #333;
+}
+
+
+/* 已被访问的链接 */
+
+a:hover {
+    color: #2796eb;
+}
+
+
+/* 鼠标指针移动到链接上 */
+
+a:active {
+    color: #2796eb;
+}
+
+
+/* 正在被点击的链接 */
+
+
+/*show 控制某些模块的先死*/
+
+.show {
+    display: block;
+    opacity: 1;
+}
+
+
+/*音频*/
+
+
+/*audio::-webkit-media-controls {*/
+
+
+/*overflow: hidden !important*/
+
+
+/*}*/
+
+
+/*audio::-webkit-media-controls-enclosure {*/
+
+
+/*width: calc(100% + 32px);*/
+
+
+/*margin-left: auto;*/
+
+
+/*}*/
+
+
+/*audio::-internal-media-controls-download-button {*/
+
+
+/*display:none;*/
+
+
+/*}*/
+
+
+/*audio::-webkit-media-controls-enclosure {*/
+
+
+/*overflow:hidden;*/
+
+
+/*}*/
+
+
+/*audio::-webkit-media-controls-panel {*/
+
+
+/*width: calc(100% + 30px);*/
+
+
+/*}*/
