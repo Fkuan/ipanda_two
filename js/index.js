@@ -24,30 +24,30 @@ $(window).on("load", function () {
  
 
 //loading
-var baifen = 0;
-var loadTime = setInterval(() => {
-  var proWidth = parseInt($(".progressChange").css("width"));
-  
-  console.log(proWidth)
-  proWidth += 210;
-  baifen += 42;
-  if (proWidth < 481) {
-    $(".progressChange span").text(baifen+'%')
-    console.log(baifen)
-    $(".progressChange").css("width", proWidth + 'px')
-    proWidth += 40;
-    baifen += 9;
-  } else {
-    clearInterval(loadTime);
+var loadingText = 0;
+var loadingInter = setInterval(function () {
+  loadingText++
+  changeLoading(loadingText);
+  if(loadingText >= 99){
+    clearInterval(loadingInter);
   }
-}, 300);
+},25);
+
+
+function changeLoading(loadingText){
+  $(".progressChange").css("width",loadingText+'%')
+  $(".progressChange span").text(loadingText+'%');
+}
+
+
+
 //guideClose
 $(".guideClose").on("click",function(){
   $(".guide").fadeOut();
-})
+});
 $(".guideBtn").on("click",function(){
   $(".guide").fadeIn();
-})
+});
 
 // 下拉列表
 $(".div-child-china").click(function () {
@@ -57,18 +57,35 @@ $(".div-child-china").click(function () {
 $(".list-turn-up-button").click(function () {
   $(".list-box").slideUp();
   $(".list-turn-up-button").hide();
+  $(".list-title-down").addClass("active");
 });
 $(".list-title").click(function () {
-  $(".list-box").slideDown();
-  $(".list-turn-up-button").show();
+
+  if($(".list-title-down").hasClass("active")){
+    $(".list-box").slideDown();
+    $(".list-turn-up-button").show();
+
+
+    $(".list-title-down").removeClass("active");
+  }else {
+    $(".list-box").slideUp();
+    $(".list-turn-up-button").hide();
+    $(".list-title-down").addClass("active");
+  }
+
 })
+
+$(".label-btn a").hover(function () {
+  $(this).parent(".label-btn").addClass("active");
+},function () {
+  $(this).parent(".label-btn").removeClass("active");
+})
+
 
 
 var renderer, clock, camera, scene, mesh, light, controls, canvas;
 var spritePos;
 var raycaster, mouse;
-var annotation = document.querySelector(".annotation");
-var annotation2 = document.querySelector(".annotation2");
 var object = null;
 
 
@@ -83,8 +100,8 @@ function initThree() {
   document.getElementById('canvas-frame').appendChild(renderer.domElement);
   // renderer.setClearColor(0x000000, 1);
 
-  camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
-  camera.position.set(-13, 0, 100);
+  camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+  camera.position.set(0,0, 100);
 
   scene = new THREE.Scene();
   var sceneTexture = new THREE.TextureLoader().load('img/bg.jpg');
@@ -92,21 +109,19 @@ function initThree() {
 
   light = new THREE.AmbientLight(0xFFFFFF, 2);
   scene.add(light);
-  renderer.domElement.style.display = "none";
   //射线
   raycaster = new THREE.Raycaster();
   mouse = new THREE.Vector2();
 
   // controls控制器
-  clock = new THREE.Clock()
+  // clock = new THREE.Clock()
   controls = new THREE.OrbitControls(camera, renderer.domElement);
   //阻尼（惯性）
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
 
   //竖直旋转的角度
-  controls.minPolarAngle = Math.PI * 0.4;
-  controls.maxPolarAngle = Math.PI * 0.6;
+  // controls.minPolarAngle = Math.PI / 5;
+  // controls.minPolarAngle = 0;
+  // controls.maxPolarAngle = Math.PI;
 
   controls.panSpeed = 0.5;
   controls.enablePan = false;
@@ -117,12 +132,12 @@ function initThree() {
     MIDDLE: THREE.MOUSE.DOLLY,
     RIGHT: ''
   }
-  controls.minDistance = 55;
-  controls.maxDistance = 200;
+  controls.minDistance = 60;
+  controls.maxDistance = 100;
 
   window.addEventListener("resize", onWindowResize, false) ;
-  window.addEventListener( 'mousewheel', mousewheel, { passive: false} );
-  window.addEventListener('mousemove', onZooMouseMove , false) ;
+  // window.addEventListener( 'mousewheel', mousewheel, { passive: false} );
+  window.addEventListener('mousemove', onMouseMove , false) ;
 }
 function initObject() {
   //替换昼夜贴图
@@ -136,6 +151,7 @@ function initObject() {
     console.log('黑天');
     skinUrl = "./obj/diqiu-night.jpg"
   }
+
   var modeLoader = new THREE.FBXLoader();
   var imgLoader = new THREE.TextureLoader();
   imgLoader.load(skinUrl, function (texture) {
@@ -151,43 +167,49 @@ function initObject() {
         }
 
       });
-      obj.rotation.x = Math.PI / 20; //5
-      obj.scale.set(3.8, 3.8, 3.8);
-      // obj.position.x =13;
+      obj.rotation.x = Math.PI / 5;
+
+      obj.scale.set(5,5,5);
       obj.name = "earth";
       object = obj;
       scene.add(object);
-      renderer.domElement.style.display = "block";
 
-      //循环国家
-      for (var i = 0; i < countries.length; i++) {
-        var country = countries[i].position;
-        createSprites(country, i);
-      }
-      //循环外国城市
+      // //循环国家
+      // for (var i = 0; i < countries.length; i++) {
+      //   var country = countries[i].position;
+      //   createSprites(country, i,"img/sprite1.png",31.5,countries,1,"国内");
+      // }
+      // //循环外国城市
       for (var i = 0; i < foreignCountries.length; i++) {
         var foreign = foreignCountries[i].position;
         var foreignImgUrl = foreignCountries[i].url;
         var foreignRadius = foreignCountries[i].r;
-        createMapSprites(foreign, i , foreignImgUrl , foreignRadius);
+        createSprites(foreign, i , foreignImgUrl , foreignRadius,foreignCountries,3,"外国");
       }
-      //循环动物园
+      // //循环动物园
       for(var a = 0 ; a < zoos.length ; a++){
         var zoo = zoos[a].position;
-        zooRadius = zoos[a].r;
-        console.log("动物园",zoo ,a ,zooRadius)
-        createSpritesZoo(zoo , a ,zooRadius)
+        var zooRadius = zoos[a].r;
+        createSprites(zoo , a ,"img/countryIcon/zoo-icon1.png",zooRadius,zoos,1,"动物园")
       }
 
     }, function (progress) {
-      // console.log(progress)
+      var progressNum = progress.loaded / progress.total;
+      progressNum = progressNum.toFixed(2) * 100;
+      if(progressNum == 100){
+        clearInterval(loadingInter);
+        changeLoading(100);
+        $(".earth-loading-box").fadeOut();
+      }
+
     }, function (err) {
       // console.log(err)
     });
   })
 }
 //Raycaster
-function onZooMouseMove(event){
+var changeObj = "",changeObjIndex = "";
+function onMouseMove(event){
   event.preventDefault();
 
   mouse.x = ( event.clientX / window.innerWidth) * 2 - 1;
@@ -197,206 +219,122 @@ function onZooMouseMove(event){
   var divText = document.getElementsByClassName("zoo")[0];
   var intersects = raycaster.intersectObjects(scene.children );
   divText.innerText = " ";
+
   if( intersects.length > 0){
     for(var i = 0; i < intersects.length; i++){
-
-      if(intersects[ i ].object.name === "北京动物园" || intersects[ i ].object.name === "上海动物园" || intersects[ i ].object.name === "广州动物园" || intersects[ i ].object.name === "澳门动物园" || intersects[ i ].object.name === "香港动物园"){
+      if(intersects[ i ].object.useType === "动物园"){
 
         console.log(intersects[ i ].object.name , event.clientX)
         var zooName = intersects[ i ].object.name;
 
         divText.innerText = zooName;
-        divText.style.display =" block";
-        divText.style.position = "absolute";
+        divText.style.display ="block";
         divText.style.left = event.clientX - 33  + 'px';
         divText.style.top = event.clientY -33 + 'px';
         return;
-      }else{
-        divText.style.display =" none";
+      }else if(intersects[ i ].object.useType === "外国"){
+        var imageIndex = intersects[ i ].object.index;
+        var interObj = intersects[ i ].object;
+        changeObj = interObj;
+        changeObjIndex = imageIndex;
+        var textureLoader = new THREE.TextureLoader();
+        textureLoader.load(foreignCountries[imageIndex].urlHover,function (texture) {
+           interObj.material.map = texture;
+          interObj.material.needsUpdate = true;
+        })
+      }else {
+        divText.style.display ="none";
+        if(changeObj !== ""){
+          var textureLoader = new THREE.TextureLoader();
+          textureLoader.load(foreignCountries[changeObjIndex].url,function (texture) {
+            changeObj.material.map = texture;
+            changeObj.material.needsUpdate = true;
+          })
+        }
+
+
       }
 
     }
+  }else {
+    divText.style.display ="none";
+    if(changeObj !== ""){
+      var textureLoader = new THREE.TextureLoader();
+      textureLoader.load(foreignCountries[changeObjIndex].url,function (texture) {
+        changeObj.material.map = texture;
+        changeObj.material.needsUpdate = true;
+        changeObj = "";
+      })
+
+    }
   }
 
 }
 
-//鼠标滑轮事件
-function mousewheel(e) {
-  var fov = 40;
-  var near = 1;//最小范围
-  var far = 1000;//最大范围
-  e.preventDefault();
-  // e.stopPropagation();
-  if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
-    if (e.wheelDelta > 0) { //当滑轮向上滚动时
-      fov -= (near < fov ? 1 : 0);
-      console.log('向上')
-    }
-    if (e.wheelDelta < 0) { //当滑轮向下滚动时
-      fov += (fov < far ? 1 : 0);
-      console.log('向下')
-    }
-  } else if (e.detail) {  //Firefox滑轮事件
-    if (e.detail > 0) { //当滑轮向上滚动时
-      fov -= 1;
-      console.log('向上')
-    }
-    if (e.detail < 0) { //当滑轮向下滚动时
-      fov += 1;
-      console.log('向上')
-    }
-  }
-  camera.fov = fov;
-  camera.updateProjectionMatrix();
-  renderer.render(scene, camera);
-
-}
 //加精灵
-function createSprites(lon, i ) {
+function createSprites(lon, i ,imgUrl,radius,infoArr,scale,type) {
   var textureLoader = new THREE.TextureLoader();
-  textureLoader.load("img/sprite1.png", function (texture) {
+
+  textureLoader.load(imgUrl, function (texture) {
     var spriteMaterials = new THREE.SpriteMaterial({
       map: texture
     });
-
     spritePos = new THREE.Sprite(spriteMaterials);
-
     spritePos.index = i;
-
-    spritePos.name = countries[i].name;
-
-    // spritePos.scale.set(1 ,1 ,1 );
-
-    var position = createPosition(lon);
-
+    spritePos.useType = type;
+    spritePos.name = infoArr[i].name;
+    scale  = scale || 1;
+    spritePos.scale.set(scale,texture.image.height / texture.image.width * scale ,1 );
+    var position = createPosition(lon,radius);
     spritePos.position.set(position.x + 1, position.y + 1, position.z + 1);
-
     scene.add(spritePos);
   });
 
 }
-//国外国家的精灵图
-function createMapSprites(foreign, i , foreignImgUrl , foreignRadius) {
-  var textureLoader = new THREE.TextureLoader();
-  textureLoader.load( foreignImgUrl, function (texture) {
-    var materialB = new THREE.SpriteMaterial({
-      map: texture
-    });
-
-    var mapPos = new THREE.Sprite(materialB);
-    mapPos.scale.set(2 ,2 ,2 );
-
-    mapPos.name = foreignCountries[i].name;
-    var mapPlaces = createPosition2(foreign , foreignRadius);
-    mapPos.position.set(mapPlaces.x + 1, mapPlaces.y + 1, mapPlaces.z + 1);
-
-    scene.add(mapPos);
-
-  });
-}
-//zoo精灵
-function createSpritesZoo(zoo, i ,zooRadius ) {
-  var textureLoader = new THREE.TextureLoader();
-  textureLoader.load("img/countryIcon/zoo-icon1.png", function (texture) {
-    var spriteMaterials = new THREE.SpriteMaterial({
-      map: texture
-    });
-
-    var zooPos = new THREE.Sprite(spriteMaterials);
-
-    zooPos.index = i;
-
-    zooPos.name = zoos[i].name;
-
-    zooPos.scale.set(0.5 ,0.5 ,0.5 );
-
-    var position = createPositionZoo(zoo , zooRadius);
-
-    zooPos.position.set(position.x + 1, position.y + 1, position.z + 1);
-
-    scene.add(zooPos);
-  });
-
-}
-
 
 //转换经纬度
-function createPosition(lnglat) {
-  var spherical = new THREE.Spherical
-  spherical.radius = 22; // 24
-  const lng = lnglat[0] - 205; // -200
-  const lat = lnglat[1] -10; // -36
-  const theta = (lng + 90) * (Math.PI / 180)
-  const phi = (90 - lat) * (Math.PI / 180)
-  spherical.phi = phi
-  spherical.theta = theta
-  var position = new THREE.Vector3()
-  position.setFromSpherical(spherical)
-  return position
+function createPosition(lnglat,radius) {
+  var spherical = new THREE.Spherical();
+  spherical.radius = radius; // 31.5
+  const lng = lnglat[0] - 205; // -200 经度
+  const lat = lnglat[1] -36; // -36 纬度
+  const theta = (lng + 90) * (Math.PI / 180);
+  const phi = (90 - lat) * (Math.PI / 180);
+  spherical.phi = phi;
+  spherical.theta = theta;
+  var position = new THREE.Vector3();
+  position.setFromSpherical(spherical);
+  return position;
 
 }
-function createPosition2(lnglat , foreignRadius) {
-  var spherical = new THREE.Spherical
-  spherical.radius = foreignRadius;
-  const lng = lnglat[0] - 200;
-  const lat = lnglat[1]-30;
-  const theta = (lng + 90) * (Math.PI / 180)
-  const phi = (90 - lat) * (Math.PI / 180)
-  spherical.phi = phi
-  spherical.theta = theta
-  var position = new THREE.Vector3()
-  position.setFromSpherical(spherical)
-  return position
 
-}
-function createPositionZoo(lnglat , zooRadius) {
-  var spherical = new THREE.Spherical
-  spherical.radius = zooRadius;
-  const lng = lnglat[0] - 205;
-  const lat = lnglat[1] - 10;
-  const theta = (lng + 90) * (Math.PI / 180)
-  const phi = (90 - lat) * (Math.PI / 180)
-  spherical.phi = phi
-  spherical.theta = theta
-  var position = new THREE.Vector3()
-  position.setFromSpherical(spherical)
-  return position
-
-}
 
 //给标签赋坐标
 function updateScreenPosition() {
-
-  var countryPos1 = countries[0].position;
-  var countryPos2 = countries[1].position;
-  var label_pos1 = createPosition(countryPos1);
-
-  var show1 = updateAnnotationOpacity(label_pos1);
-
-  var label_pos2 = createPosition(countryPos2);
-  var show2 = updateAnnotationOpacity(label_pos2);
-
-  var vector = new THREE.Vector3(label_pos1.x, label_pos1.y, label_pos1.z);
-  var vector2 = new THREE.Vector3(label_pos2.x, label_pos2.y, label_pos2.z);
-
   var canvas = renderer.domElement;
 
-  vector.project(camera);
-  vector2.project(camera);
+  countries.forEach(function (countryItem,countryIndex) {
+    var countryPos = countryItem.position;
+    var label_pos = createPosition(countryPos,31.5);
+    var show = updateAnnotationOpacity(label_pos);
+    var vector = new THREE.Vector3(label_pos.x, label_pos.y, label_pos.z);
 
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
+    vector.project(camera);
+    // vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
+    // vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
 
-  vector2.x = Math.round((0.5 + vector2.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector2.y = Math.round((0.5 - vector2.y / 2) * (canvas.height / window.devicePixelRatio));
+    vector.x = (0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio);
+    vector.y = (0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio);
 
-  annotation.style.top = vector.y - 90  + "px"; //80
-  annotation.style.left = vector.x - 8  + "px";
-  annotation.style.display = show1 ? "none" : "block";
+    var labelBox = $(".label-btn")[countryIndex];
+    labelBox.style.top = vector.y  + "px"; //80
+    labelBox.style.left = vector.x  + "px";
+    labelBox.style.display = show ? "none" : "block";
 
-  annotation2.style.top = vector2.y - 70 + "px";
-  annotation2.style.left = vector2.x - 12 + "px";
-  annotation2.style.display = show2 ? "none" : "block"
+  })
+
+
+
 }
 //转换透明度
 function updateAnnotationOpacity(position) {
@@ -404,7 +342,7 @@ function updateAnnotationOpacity(position) {
 
   var spriteDistance = camera.position.distanceTo(position);
 
-  var spriteBehindObject = spriteDistance > meshDistance;
+  var spriteBehindObject = spriteDistance >  meshDistance - 20;
   return spriteBehindObject;
 
 }
@@ -423,8 +361,8 @@ function animation() {
 
 
 function render() {
-  var delta = clock.getDelta()
-  controls.update(delta); //更新控制器.
+  // var delta = clock.getDelta()
+  controls.update(); //更新控制器.
   renderer.render(scene, camera);
   if (object) {
     updateScreenPosition();
@@ -443,34 +381,34 @@ var countries = [{
 },
   {
     name: "成都大熊猫繁育研究基地",
-    position: [106.06, 28.67]
+    position: [108.06, 30.67]
   }
 ]
 var zoos = [
   {
     name: "北京动物园",
     position: [112, 39.56],
-    r:23
+    r:33
   },
   {
     name: "上海动物园",
     position: [118.2, 30],
-    r:23.2
+    r:33
   },
   {
     name: "广州动物园",
     position: [110, 23.6],
-    r:23.4
+    r:33
   },
   {
     name: "澳门动物园",
     position: [111.2, 21.2],
-    r:23.4
+    r:33
   },
   {
     name: "香港动物园",
     position: [112.7, 21.8],
-    r:23.4
+    r:33
   },
   ];
 var foreignCountries = [
@@ -478,61 +416,47 @@ var foreignCountries = [
     name: "美国",
     position: [70,40],
     url:'img/countryIcon/russia.png',
-    r:25
+    urlHover:'img/countryIcon/russia-hover.png',
+    r:33
   },
   {
     name: "德国",
     position: [10.27, 51.09],
     url:'img/countryIcon/russia.png',
-    r:25.5
+    urlHover:'img/countryIcon/russia-hover.png',
+    r:33
   },
   {
     name: "俄罗斯",
     position: [37.37, 55.45],
     url:'img/countryIcon/russia.png',
-    r:25
+    urlHover:'img/countryIcon/russia-hover.png',
+    r:33
   },
-  {
-    name: "英国",
-    position: [-0.05, 51.36],
-    url:'img/countryIcon/russia.png',
-    r:26
-  },
+
   {
     name: "印度尼西亚",
     position: [106.49, -6.09],
     url:'img/countryIcon/russia.png',
-    r:24.5
+    urlHover:'img/countryIcon/russia-hover.png',
+    r:33
   },
-  {
-    name: "泰国",
-    position: [100.35, 13.45],
-    url:'img/countryIcon/russia.png',
-    r:24
-  },
+
   {
     name: "日本",
-    position: [139.75, 35.67],
+    position: [130.75, 35.67],
     url:'img/countryIcon/russia.png',
-    r:23.5
-  },
-  {
-    name: "比利时",
-    position: [4.21, 50.51],
-    url:'img/countryIcon/russia.png',
-    r:25.8
-  },
-  {
-    name: "澳大利亚",
-    position: [149.08, -35.15],
-    url:'img/countryIcon/russia.png',
-    r:25
-  },
-  {
-    name: "奥地利",
-    position: [16.22, 48.12],
-    url:'img/countryIcon/russia.png',
-    r:25.5
+    urlHover:'img/countryIcon/russia-hover.png',
+    r:31.5
   }
 
-]
+];
+
+
+
+
+
+
+
+
+

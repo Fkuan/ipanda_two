@@ -15,6 +15,7 @@
     <script src="js/MTLLoader.js"></script>
     <script src="js/TGALoader.js"></script>
     <script src="js/OrbitControls.js"></script>
+<!--    <script src="js/TrackballControls.js"></script>-->
     <script src="js/inflate.min.js"></script>
     <script src="js/WebGL.js"></script>
     <link href="./css/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
@@ -40,21 +41,15 @@
     <!--地球-->
     <div id="canvas-frame">
         <div class="earth-bg">
-            <div class="earth">
-                <div class="loadPanda"></div>
-                <div class="progress">
-                    <div class="progressChange">
-                        <div class="Ydian"><span>0%</span></div>
-                    </div>
-                </div>
-                <div class="loadPic"></div>
-            </div>
+<!--            <div class="earth">-->
+
+<!--            </div>-->
         </div>
         
-        <div class="label-baohu annotation">
+        <div class="label-baohu  annotation label-btn">
             <a href="./vtour/tour.html" target="_blank" class="labelone-jump"></a>
         </div>
-        <div class="label-fanyu annotation2">
+        <div class="label-fanyu annotation2 label-btn">
             <a href="./vtour/tour.html" target="_blank" class="labelTwo-jump"></a>
         </div>
         <div class="zoo"></div>
@@ -71,7 +66,10 @@
        
     </div>
     <div class="list-container">
-        <div class="list-title"></div>
+        <div class="list-title">
+            <div class="list-title-icon"></div>
+            <div class="list-title-down"></div>
+        </div>
         <!-- 收起箭头 -->
         <div class="list-turn-up-button"></div>
         <div class="list-box">
@@ -81,20 +79,65 @@
                     <span class="slide-down-icon"></span>
                 </div>
                 <div class="jd-box">
-                    <a class="panda-cd" target="_blank" href="./vtour/tour.html">
-                        <p class="font-type-down on">成都大熊猫繁育基地</p>
-                    </a>
-                    <a class="panda-djy" target="_blank" href="https://www.w3school.com.cn/js/js_string_methods.asp">
-                        <p class="font-type-down">中国大熊猫保护研究中心都江堰基地</p>
-                    </a>
-
-                    <div class="more-line"></div>
-                    <a href="./details.html" target="_blank" class="yaan-jd">
-                        <p class="font-type-down">中国大熊猫保护研究中心雅安碧峰峡基地</p>
-                    </a>
-                    <a href="./details.html" target="_blank" class="yaan-jd wolong-jd">
-                        <p class="font-type-down">中国大熊猫保护研究中心卧龙核桃坪野基地</p>
-                    </a>
+                    <p class="font-type-down">
+                        <a class="panda-cd" target="_blank" href="./vtour/tour.html">
+                            成都大熊猫繁育基地
+                        </a>
+                    </p>
+                    <div class="font-box clearfix">
+                        <p class="font-type-down">
+                            <a class="panda-djy" target="_blank" href="https://www.w3school.com.cn/js/js_string_methods.asp">
+                                中国大熊猫保护研究中心都江堰基地
+                            </a>
+                        </p>
+                        <div class="more-font-box clearfix">
+                            <p class="font-other-type-down">
+                                <a href="./details.html" target="_blank" class="">
+                                    卧龙神树坪基地
+                                </a>
+                            </p>
+                            <p class="font-other-type-down">
+                                <a href="./details.html" target="_blank" class=" ">
+                                    雅安碧峰峡基地
+                                </a>
+                            </p>
+                            <p class="font-other-type-down">
+                                <a href="./details.html" target="_blank" class=" ">
+                                    卧龙核桃坪野化培训基地
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="other-line">其他地区</div>
+                    <div class="other-zoo-box clearfix">
+                        <div class="other-zoo">
+                            <a href="">北京动物园</a>
+                        </div>
+                        <div class="other-zoo">
+                            <a href="">上海动物园</a>
+                        </div>
+                        <div class="other-zoo">
+                            <a href="">太原动物园</a>
+                        </div>
+                        <div class="other-zoo">
+                            <a href="">广州动物园</a>
+                        </div>
+                        <div class="other-zoo">
+                            <a href="">武汉动物园</a>
+                        </div>
+                        <div class="other-zoo">
+                            <a href="">杭州动物园</a>
+                        </div>
+                        <div class="other-zoo">
+                            <a href="">长沙动物园</a>
+                        </div>
+                        <div class="other-zoo">
+                            <a href="">石家庄动物园</a>
+                        </div>
+                        <div class="other-zoo">
+                            <a href="">苏州动物园</a>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -132,6 +175,18 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="earth-loading-box">
+        <div class="earth-loading">
+            <div class="loadPanda"></div>
+            <div class="progress">
+                <div class="progressChange">
+                    <div class="Ydian"><span>0%</span></div>
+                </div>
+            </div>
+            <div class="loadPic"></div>
+        </div>
+
     </div>
    
     <script src="js/index.js"></script>
