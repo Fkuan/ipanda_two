@@ -52,6 +52,7 @@ $(".guideBtn").on("click",function(){
 // 下拉列表
 $(".div-child-china").click(function () {
   $(".jd-box").slideToggle();
+  $(".slide-down-icon").toggleClass("active")
 });
 //收起列表
 $(".list-turn-up-button").click(function () {
@@ -117,9 +118,9 @@ function initThree() {
   // clock = new THREE.Clock()
   controls = new THREE.OrbitControls(camera, renderer.domElement);
   //阻尼（惯性）
-
+  controls.enableDamping = true;
   //竖直旋转的角度
-  // controls.minPolarAngle = Math.PI / 5;
+
   // controls.minPolarAngle = 0;
   // controls.maxPolarAngle = Math.PI;
 
@@ -137,7 +138,8 @@ function initThree() {
 
   window.addEventListener("resize", onWindowResize, false) ;
   // window.addEventListener( 'mousewheel', mousewheel, { passive: false} );
-  window.addEventListener('mousemove', onMouseMove , false) ;
+  document.getElementById('canvas-frame').addEventListener('mousemove', onMouseMove , false) ;
+  document.getElementById('canvas-frame').addEventListener("mousedown",onMouseClick,false);
 }
 function initObject() {
   //替换昼夜贴图
@@ -167,30 +169,25 @@ function initObject() {
         }
 
       });
-      obj.rotation.x = Math.PI / 5;
+      // obj.rotation.x = Math.PI / 5;
 
       obj.scale.set(5,5,5);
       obj.name = "earth";
       object = obj;
       scene.add(object);
 
-      // //循环国家
-      // for (var i = 0; i < countries.length; i++) {
-      //   var country = countries[i].position;
-      //   createSprites(country, i,"img/sprite1.png",31.5,countries,1,"国内");
-      // }
       // //循环外国城市
       for (var i = 0; i < foreignCountries.length; i++) {
         var foreign = foreignCountries[i].position;
         var foreignImgUrl = foreignCountries[i].url;
         var foreignRadius = foreignCountries[i].r;
-        createSprites(foreign, i , foreignImgUrl , foreignRadius,foreignCountries,3,"外国");
+        createSprites(foreign, i , foreignImgUrl , foreignRadius,foreignCountries,4,"外国");
       }
       // //循环动物园
       for(var a = 0 ; a < zoos.length ; a++){
         var zoo = zoos[a].position;
         var zooRadius = zoos[a].r;
-        createSprites(zoo , a ,"img/countryIcon/zoo-icon1.png",zooRadius,zoos,1,"动物园")
+        createSprites(zoo , a ,"img/countryIcon/zoo-icon1.png",zooRadius,zoos,0.8,"动物园")
       }
 
     }, function (progress) {
@@ -271,6 +268,40 @@ function onMouseMove(event){
 
 }
 
+
+function onMouseClick(event) {
+  event.preventDefault();
+
+  mouse.x = ( event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -( event.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera( mouse , camera);
+  var intersects = raycaster.intersectObjects(scene.children );
+
+  if( intersects.length > 0){
+    for(var i = 0; i < intersects.length; i++){
+      if(intersects[ i ].object.useType === "动物园"){
+
+        console.log(intersects[ i ].object.name , event.clientX)
+        var zooName = intersects[ i ].object.name;
+        console.log(intersects[ i ].object.index)
+      //  点击动物园执行事件
+
+
+      }else if(intersects[ i ].object.useType === "外国"){
+        var imageIndex = intersects[ i ].object.index;
+        console.log(intersects[ i ].object.name)
+      //  点击外国图标执行事件
+
+
+
+      }
+
+    }
+  }
+
+}
+
 //加精灵
 function createSprites(lon, i ,imgUrl,radius,infoArr,scale,type) {
   var textureLoader = new THREE.TextureLoader();
@@ -297,7 +328,7 @@ function createPosition(lnglat,radius) {
   var spherical = new THREE.Spherical();
   spherical.radius = radius; // 31.5
   const lng = lnglat[0] - 205; // -200 经度
-  const lat = lnglat[1] -36; // -36 纬度
+  const lat = lnglat[1] - 2; // -36 纬度
   const theta = (lng + 90) * (Math.PI / 180);
   const phi = (90 - lat) * (Math.PI / 180);
   spherical.phi = phi;
@@ -388,27 +419,27 @@ var zoos = [
   {
     name: "北京动物园",
     position: [112, 39.56],
-    r:33
+    r:31
   },
   {
     name: "上海动物园",
     position: [118.2, 30],
-    r:33
+    r:31
   },
   {
     name: "广州动物园",
     position: [110, 23.6],
-    r:33
+    r:31
   },
   {
     name: "澳门动物园",
     position: [111.2, 21.2],
-    r:33
+    r:31
   },
   {
     name: "香港动物园",
     position: [112.7, 21.8],
-    r:33
+    r:31
   },
   ];
 var foreignCountries = [
