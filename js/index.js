@@ -1,4 +1,25 @@
-﻿//自定义滚动条
+﻿// rem适配
+(function (doc, win) {
+  var docEl = doc.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          var clientHeigth = docEl.clientHeigth;
+          if (!clientWidth) return;
+          if (clientWidth >= 1920) {
+              // clientWidth = 1920;
+              docEl.style.fontSize = '100px';
+          } else {
+
+              docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';
+          }
+          console.log(docEl.style.fontSize)
+      };
+  if (!doc.addEventListener) return;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+//自定义滚动条
 (function ($) {
   $(window).on("load", function () {
     $(".list-box").mCustomScrollbar({
@@ -98,6 +119,7 @@ function initThree() {
     antialias: true
   });
   renderer.setSize(width, height);
+  renderer.setPixelRatio( window.devicePixelRatio);
   document.getElementById('canvas-frame').appendChild(renderer.domElement);
   // renderer.setClearColor(0x000000, 1);
 

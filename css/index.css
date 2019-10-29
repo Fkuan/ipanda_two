@@ -1,11 +1,17 @@
-*{margin: 0;padding: 0;}
+*{
+    margin: 0;
+    padding: 0;
+}
 .nav {
     width:100%;
-    height:62px;
+    height:0.62rem;
     position: absolute;
     top: 0;
     left: 0;
     z-index:10;
+}
+.nav img{
+    width: 100%;
 }
 body{
     margin:0;
@@ -13,7 +19,7 @@ body{
     scrollbar-width: none;
 }
 body::-webkit-scrollbar {
-    display:none
+    display:none 
 }
 div#canvas-frame {
     border: none;
@@ -24,9 +30,8 @@ div#canvas-frame {
     position: absolute;
     left: 0;
     top: 0;
-
 }
-div#canvas-frame  canvas{
+div#canvas-frame canvas{
     width: 100%;
     height:100%;
     position: absolute;
@@ -35,21 +40,20 @@ div#canvas-frame  canvas{
 }
 /*动物园hover*/
 div#canvas-frame .zoo{
-    min-width:50px;
-    height:20px;
-    line-height:20px;
+    min-width:0.5rem;
+    height:0.2rem;
+    line-height:0.2rem;
     text-align:center;
-    border-radius: 20px;
+    border-radius: 0.2rem;
     background-color: rgba(0,0,0,0.6);
     position:absolute;
-    font-size:12px;
+    font-size:0.12rem;
     color:#EEEEEE;
     font-family: "微軟雅黑";
-    padding:0 10px;
+    padding:0 0.1rem;
     display: none;
     z-index:10;
 }
-
 .earth-bg{
     width: 100%;
     height:100%;
@@ -58,44 +62,23 @@ div#canvas-frame .zoo{
     background-size: 100% 100%;
     position: absolute;
 }
-/*.earth{*/
-/*    width:500px;*/
-/*    height:450px;*/
-/*    !* background: red; *!*/
-/*    position:absolute;*/
-/*    top:50%;*/
-/*    left:50%;*/
-/*    transform: translate(-50%, -50%);*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*    !* */
-/*    background-image: url("../img/qiu.png");*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: 100% 100%;*/
-/*    */
-/*    margin-left:-655.5px;*/
-/*    margin-top:-417px;*/
-/*    display:none *!*/
-/*}*/
-
 .guide{
     width:100%;
     height:100%;
     background: url("../img/guide/mengban.png") no-repeat;
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
     position: relative;
     z-index: 20;
-    /*display: none;*/
+   /*display: none;
+    */
 }
 .guideBtn{
     display: none;
-    width:170px;
-    height:140px;
+    width:1.7rem;
+    height:1.4rem;
     position: absolute;
-    right: 60px;
-    bottom: 80px;
+    right: 0.6rem;
+    bottom: 0.8rem;
     background: url("../img/guide/guideBtn.png") no-repeat;
     background-size: 100% 100%;
     cursor: pointer;
@@ -105,8 +88,8 @@ div#canvas-frame .zoo{
     background-size: 100% 100%;
 }
 .guideBg{
-    width:1101px;
-    height:695px;
+    width:57%;
+    height:36.19vw;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -115,65 +98,63 @@ div#canvas-frame .zoo{
     background-size: 100% 100%;
 }
 .guideClose{
-    width:220px;
-    height:68px;
+    width:2.2rem;
+    height:0.68rem;
     position: absolute;
     left: 50%;
-    bottom: -58px;
+    bottom: -0.58rem;
     transform: translate(-50%, -50%);
     background: url("../img/guide/tiyan.png") no-repeat;
     background-size: 100% 100%;
     cursor: pointer;
 }
-.guideClose:hover{ 
-    background: url("../img/guide/tiyan_hover.png") no-repeat; 
+.guideClose:hover{
+    background: url("../img/guide/tiyan_hover.png") no-repeat;
     background-size: 100% 100%;
 }
 .guidePanda{
-    width:171px;
-    height:199px;
+    width:1.71rem;
+    height:1.99rem;
     position: absolute;
     left: 28%;
-    top: -13%;
+    top: -1.14rem;
     background: url("../img/guide/laoshi-x.gif") no-repeat;
     background-size: 100% 100%;
 }
 .guidePanda span{
-    width:285px;
-    height:160px;
+    width:2.85rem;
+    height:1.6rem;
     position: absolute;
-    right:-286px;
-    top: 40px;
-    
+    right:-2.86rem;
+    top: 0.4rem;
     background: url("../img/guide/biaoyu.png") no-repeat;
-    background-size: 100% 100%;  
+    background-size: 100% 100%;
 }
-
 .label-baohu{
-    width:171px;
-    height:78px;
+    width:1.71rem;
+    height:0.78rem;
     position: absolute;
     background-image: url("../img/txt-baohu-bg1.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     z-index: 1;
-    margin-top: -78px;
-    margin-left: -20px;
+    margin-top: -0.78rem;
+    margin-left: -0.2rem;
     transition: opacity .5s;
 }
 .label-baohu.active{
     background-image: url("../img/txt-baohu-bg1-hover.png");
 }
 .label-fanyu{
-    width:171px;
-    height:58px;
+    width:1.71rem;
+    height:0.58rem;
     position: absolute;
     background-image: url("../img/txt-fanyu-bg2.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     z-index: 1;
-    margin-top: -58px;
-    margin-left: -20px;
+    margin-top: -0.58rem;
+    margin-left: -0.2rem;
     transition: opacity .5s;
 }
 .label-fanyu.active{
@@ -181,63 +162,61 @@ div#canvas-frame .zoo{
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
 /*标签跳转*/
 .labelone-jump{
     display:block;
-    width:171px;
-    height:30px;
+    width:1.71rem;
+    height:0.3rem;
     position: absolute;
     top:0;
     right:0;
 }
 .labelTwo-jump{
     display:block;
-    width:171px;
-    height:30px;
+    width:1.71rem;
+    height:0.3rem;
     position: absolute;
     top:0;
     left:0;
 }
 .list-container{
-    width:362px;
-    height:calc(100% - 100px);
+    width:3.62rem;
+    height:calc(100% - 1rem);
     position:absolute;
-    top:62px;
-    left:20px;
+    top:0.6rem;
+    left:0.2rem;
     display:none;
 }
 .list-container .list-title{
-    width:362px;
-    height:76px;
+    width:3.62rem;
+    height:0.76rem;
     background-image: url("../img/index/list-title.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position:relative;
-    margin-top:25px;
+    margin-top:0.25rem;
     cursor: pointer;
 }
-
 .list-title-icon{
-    width: 94px;
-    height: 97px;
+    width: 0.94rem;
+    height: 0.97rem;
     background-image: url("../img/index/list-title-icon.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
-    top: -16px;
-    left: -4px;
+    top: -0.16rem;
+    left: -0.04rem;
 }
 .list-title-down{
-    width: 21px;
-    height: 11px;
+    width: 0.21rem;
+    height: 0.11rem;
     background-image: url("../img/list-down.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
     top: 50%;
-    margin-top: -5px;
-    right: 20px;
+    margin-top: -0.05rem;
+    right: 0.2rem;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -255,44 +234,43 @@ div#canvas-frame .zoo{
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-
 }
 .list-container .list-box{
-    width:362px;
-    height:calc(100% - 120px);
+    width:3.62rem;
+    height:calc(100% - 1.2rem);
     background-image: url("../img/index/list-bg.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position:relative;
-    margin-top: 10px;
-    padding:2px 0 20px;
+    margin-top: 0.1rem;
+    padding:0.02rem 0 0.2rem;
     box-sizing: border-box;
     overflow-y: auto;
     overflow-x: hidden;
 }
 /*箭头*/
 .list-turn-up-button{
-    width:69px;
-    height:21px;
+    width:0.69rem;
+    height:0.21rem;
     background-image:url("../img/index/list-up-button.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position:absolute;
-    bottom:9px;
+    bottom:0.09rem;
     left:50%;
-    margin-left:-34.5px;
+    transform: translateX(-50%);
     z-index: 10;
     cursor: pointer;
 }
 .div-china{
-    width:317px;
+    width:3.17rem;
     height:auto;
-    margin: 20px auto 0;
+    margin: 0.2rem auto 0;
 }
 .div-child-china{
-    width:316px;
-    height:55px;
-    line-height: 55px;
+    width:3.16rem;
+    height:0.55rem;
+    line-height: 0.55rem;
     background-image: url("../img/index/list-li-china.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -304,25 +282,23 @@ div#canvas-frame .zoo{
     font-weight: bolder;
     color:#e9ac04;
 }
-
 .font-type{
-    font-size:18px;
+    font-size:0.18rem;
     color:#333333;
 }
-
 .slide-down-icon{
     display:inline-block;
-    width:23px;
-    height:13px;
+    width:0.23rem;
+    height:0.13rem;
     float: right;
-    margin-right:10px;
+    margin-right:0.1rem;
     background-image: url("../img/index/slide-down-icon.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position:absolute;
-    right:20px;
+    right:0.2rem;
     top:50%;
-    margin-top:-6.5px;
+    margin-top:-6.0.05rem;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -341,52 +317,53 @@ div#canvas-frame .zoo{
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
 }
-
-
-
 .jd-box{
-    width:292px;
+    width:2.92rem;
     height:auto;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 0.1rem;
 }
 .font-type-down{
-    width: 292px;
-    height: 37px;
-    line-height: 37px;
+    width: 2.92rem;
+    height: 0.37rem;
+    line-height: 0.37rem;
     text-align: center;
     background-color: #95e6cb;
-    border-radius: 16px;
-    margin: 10px auto;
+    border-radius: 0.16rem;
+    margin: 0.1rem auto;
     position: relative;
-    /*margin:10px 0;*/
-
+   /*margin:0.1rem 0;
+    */
 }
 .font-type-down:before{
-    width:30px;
-    height: 30px;
+    width:0.29rem;
+    height: 0.29rem;
     content: "";
     display: block;
     position: absolute;
-    left: 7px;
+    left: 0.07rem;
     top: 50%;
-    margin-top: -15px;
+    margin-top: -0.15rem;
     background-repeat: no-repeat;
     background-position: center;
 }
 .font-type-cd:before{
+    width: 0.24rem;
+    height: 0.3rem;
     background-image: url("../img/index/li-panda.png");
+    background-size: 100% 100%;
 }
 .font-type-djy:before{
     background-image: url("../img/index/li-djy.png");
+    background-size: 100% 100%;
 }
 .font-type-down a{
     display: block;
     width: 100%;
-    font-size:14px;
+    font-size:0.14rem;
     color:#333333;
     height: 100%;
-    padding-left: 10px;
+    padding-left: 0.1rem;
 }
 .font-type-down:hover{
     background-color: #FFFFFF;
@@ -395,44 +372,42 @@ div#canvas-frame .zoo{
     font-weight: bolder;
     color:#e9ac04;
 }
-
 .more-line{
-    width:292px;
-    height:12px;
+    width:2.92rem;
+    height:0.12rem;
     background-image: url("../img/index/more-line.png") !important;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin: 28px auto 23px;
+    margin: 0.28rem auto 0.23rem;
 }
 .font-box{
     position: relative;
 }
 .more-font-box{
-    width: 272px;
-    height: 125px;
+    width: 2.72rem;
+    height: 1.25rem;
     float: right;
-    border-left: 3px solid #95e6cb;
-    margin-top: -10px;
+    border-left: 0.03rem solid #95e6cb;
+    margin-top: -0.1rem;
     position: relative;
-    padding-top: 10px;
-    margin-bottom: 36px;
+    padding-top: 0.1rem;
+    margin-bottom: 0.36rem;
 }
 .font-other-type-down{
-    width: 250px;
-    height: 37px;
-    line-height: 37px;
+    width: 2.5rem;
+    height: 0.37rem;
+    line-height: 0.37rem;
     text-align: center;
-    border-radius: 18px;
+    border-radius: 0.18rem;
     float: right;
     background-color: #95e6cb;
-    margin-bottom: 10px;
+    margin-bottom: 0.1rem;
     position: relative;
 }
-
 .font-other-type-down a{
     display: block;
     width: 100%;
-    font-size:12px;
+    font-size:0.12rem;
     color:#333333;
     height: 100%;
 }
@@ -446,63 +421,60 @@ div#canvas-frame .zoo{
 .font-other-type-down:before{
     content: '';
     display: inline-block;
-    width: 20px;
-    height: 3px;
+    width: 0.2rem;
+    height: 0.03rem;
     vertical-align: middle;
     position: absolute;
-    left: -20px;
+    left: -0.2rem;
     top: 50%;
-    margin-top: -1px;
+    margin-top: -0.01rem;
     background-color: #95e6cb;
-
 }
-
 .other-line{
-    font-size: 14px;
+    font-size: 0.14rem;
     color: #FFFFFF;
     text-align: center;
-    width: 285px;
-    height: 30px;
-    line-height: 30px;
+    width: 2.85rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
     margin: 0 auto;
     position: relative;
 }
 .other-line:before{
     content: "";
     display: block;
-    width: calc(50% - 42px);
-    height: 1px;
-    border-top: 1px dashed #FFFFFF;
+    width: calc(50% - 0.42rem);
+    height: 0.01rem;
+    border-top: 0.01rem dashed #FFFFFF;
     position: absolute;
     left: 0;
     top: 50%;
-    margin-top: -1px;
+    margin-top: -0.01rem;
 }
 .other-line:after{
     content: "";
     display: block;
-    width: calc(50% - 42px);
-    height: 1px;
-    border-top: 1px dashed #FFFFFF;
+    width: calc(50% - 0.42rem);
+    height: 0.01rem;
+    border-top: 0.01rem dashed #FFFFFF;
     position: absolute;
     right: 0;
     top: 50%;
-    margin-top: -1px;
+    margin-top: -0.01rem;
 }
 .other-zoo-box{
-    width: 294px;
+    width: 2.94rem;
     margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
 }
 .other-zoo{
-    width: 92px;
-    height: 37px;
-    border-radius: 18px;
+    width: 0.92rem;
+    height: 0.37rem;
+    border-radius: 0.18rem;
     float: left;
-    margin-right: 8px;
-    margin-bottom: 10px;
-
+    margin-right: 0.08rem;
+    margin-bottom: 0.1rem;
 }
 .other-zoo:nth-of-type(3n){
     margin-right: 0;
@@ -511,11 +483,11 @@ div#canvas-frame .zoo{
     display: block;
     width: 100%;
     height: 100%;
-    font-size: 12px;
+    font-size: 0.12rem;
     color: #333333;
     text-align: center;
-    line-height: 37px;
-    border-radius: 18px;
+    line-height: 0.37rem;
+    border-radius: 0.18rem;
     background-color: #95e6cb;
     cursor: pointer;
 }
@@ -525,32 +497,27 @@ div#canvas-frame .zoo{
     color:#e9ac04;
 }
 .country-container{
-    width:320px;
-    min-height:1px;
-    margin:20px auto;
+    width:3.2rem;
+    min-height:0.01rem;
+    margin:0.2rem auto;
 }
-
 .country-font{
-    width:320px;
-    height:36px;
-    line-height:36px;
+    width:3.2rem;
+    height:0.36rem;
+    line-height:0.36rem;
     margin:0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 0.1rem;
 }
-
-
-
-
 .other-country{
     display: block;
     width:100%;
     height:100%;
     text-align: center;
-    padding-left: 30px;
-    font-size: 16px;
+    padding-left: 0.3rem;
+    font-size: 0.16rem;
     color:#333333;
     background-color: #95e6cb;
-    border-radius: 18px;
+    border-radius: 0.18rem;
     position: relative;
 }
 .other-country:hover{
@@ -564,11 +531,11 @@ div#canvas-frame .zoo{
     position: absolute;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 43px;
-    height:27px;
-    top: 50%;
-    margin-top: -13.5px;
-    left: 20px;
+    width: 0.43rem;
+    height:0.27rem;
+    top: 10%;
+    margin-top: -13.0.05rem;
+    left: 0.2rem;
 }
 .country-us:before{
     background-image: url("../img/index/us-icon.png");
@@ -594,11 +561,6 @@ div#canvas-frame .zoo{
 .country-netherlands:before{
     background-image: url("../img/index/netherlands-icon.png");
 }
-
-
-
-
-
 .on{
     color:#e9ac04;
 }
@@ -615,24 +577,24 @@ div#canvas-frame .zoo{
     z-index: 1000;
 }
 .earth-loading{
-    width: 481px;
-    height: 500px;
+    width: 4.81rem;
+    height: 5rem;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -250px;
-    margin-left: -240px;
+    margin-top: -2.5rem;
+    margin-left: -2.4rem;
 }
 .loadPanda{
-    width:281px;
-    height: 309px;
+    width:2.81rem;
+    height: 3.09rem;
     background: url("../img/loading/loading.gif") no-repeat;
     background-size: 100% 100%;
     margin: 0 auto;
 }
 .progress{
-    width:481px;
-    height: 20px;
+    width:4.81rem;
+    height: 0.2rem;
     background: url("../img/loading/jindutiao.png") no-repeat;
     background-size: 100% 100%;
 }
@@ -640,104 +602,101 @@ div#canvas-frame .zoo{
     width: 0;
     height: 100%;
     background: #2fd09a;
-    border-radius: 7px;
+    border-radius: 0.07rem;
     position: relative;
 }
 .Ydian{
-    width:40px;
-    height: 40px;
+    width:0.4rem;
+    height: 0.4rem;
     position: absolute;
-    right: -20px;
-    bottom: -10px;
+    right: -0.2rem;
+    bottom: -0.1rem;
     background: url("../img/loading/dian.png") no-repeat;
     background-size: 100% 100%;
 }
 .Ydian span{
     position: absolute;
-    right: 0px;
-    top: -25px;
+    right: 0rem;
+    top: -0.25rem;
     color: #2fd09a;
     font-weight: 600;
 }
 .loadPic{
-    width:144px;
-    height: 32px;
+    width:1.44rem;
+    height: 0.32rem;
     background: url("../img/loading/loading.png") no-repeat;
     background-size: 100% 100%;
     margin: 0 auto;
-    margin-top: 30px;
-    margin-top: 30px;
+    margin-top: 0.3rem;
+    margin-top: 0.3rem;
 }
-
 /*****重置滚动条样式******/
-
 .mCSB_draggerRail{
-    width:6px !important;
+    width:0.06rem !important;
     background-color:#ffffff!important;
 }
 .mCSB_dragger_bar{
     background-color: #fed530!important;
-    width:12px !important;
-    height:12px !important;
+    width:0.12rem !important;
+    height:0.12rem !important;
     border-radius: 50% !important;
 }
-
 .mCustomScrollBox>.mCSB_scrollTools{
     height:96% !important;
-    top:20px !important;
-    right: 5px !important;
+    top:0.2rem !important;
+    right: 0.05rem !important;
 }
 .mCSB_scrollTools .mCSB_dragger {
-     height: auto !important;
+    height: auto !important;
 }
 .mCSB_inside>.mCSB_container {
     margin-right: 0 !important;
 }
 /*媒体查询*/
-
-@media screen and (max-width:1280px){
+@media screen and (max-width:12.8rem){
     .list-container{
-        width:322px;/*362*/
-    }
+        width:3.22rem;
+   }
     .list-container .list-title{
-        width:322px; /*375*/
-        height: 67px;
-    }
+        width:3.22rem;
+        height: 0.67rem;
+   }
     .list-container .list-box{
-        width:322px; /*362*/
-    }
+        width:3.22rem;
+   }
     .div-china{
-        width:300px; /*317*/
-    }
+        width:3rem;
+   }
     .div-child-china{
         width:100%;
-    }
+   }
     .jd-box{
-        width:300px;
-    }
+        width:3rem;
+   }
     .font-type-down{
-        width: 280px;
-    }
+        width: 2.8rem;
+   }
     .font-box{
-        width: 280px;
+        width: 2.8rem;
         margin: 0 auto;
-    }
+   }
     .more-font-box{
-        width: 260px;
-    }
+        width: 2.6rem;
+   }
     .font-other-type-down{
-        width: 238px;
-    }
+        width: 2.38rem;
+   }
     .country-container{
-        width:300px;
-    }
+        width:3rem;
+   }
     .other-country{
-        width:300px; /*320*/
-    }
+        width:3rem;
+   }
     .list-turn-up-button{
-        bottom: 18px;
-    }
+        bottom: 0.18rem;
+   }
 }
+
 
 /*!*高度*!*/
 /*@media screen and (min-height:800px) and (max-height:909px){*/
