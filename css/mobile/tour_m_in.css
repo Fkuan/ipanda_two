@@ -1,0 +1,337 @@
+.science_icon{
+    position: absolute;
+    left:8px;
+    top:13px;
+    width:34px;
+    height:30px;
+    background: url("../../img/mobile/page/science.png") no-repeat center;
+    background-size: 100%;
+}
+.aerial_icon{
+    position: absolute;
+    top:15px;
+    right:93px;
+    width:92px;
+    height:34px;
+    background: url("../../img/mobile/page/aerialView.png") no-repeat center;
+    background-size: 100%;
+}
+.location_icon{
+    width:35px;
+    height:35px;
+    position: absolute;
+    right:50px;
+    top:15px;
+    background: url("../../img/mobile/page/location.png") no-repeat center;
+    background-size: 100%;
+}
+.qrcode_icon{
+    width:35px;
+    height:35px;
+    position: absolute;
+    right:8px;
+    top:15px;
+    background: url("../../img/mobile/page/share_icon.png") no-repeat center;
+    background-size: 100%;
+}
+.like_icon{
+    width:35px;
+    height:35px;
+    position: absolute;
+    right:8px;
+    bottom:241px;
+    background: url("../../img/mobile/page/like_icon.png") no-repeat center;
+    background-size: 100%;
+}
+.like_text{
+    position: absolute;
+    bottom:-16px;
+    right:0;
+    color:#fff;
+    font-size:14px;
+}
+.front_back{
+    position: absolute;
+    display:flex;
+    flex-direction:column;
+    top:430px;
+    right:8px;
+    height:93px;
+    width:35px;
+    background: url("../../img/mobile/page/arrow_bg.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.front_back span{
+    display:block;
+    flex:1;
+    width:100%;
+}
+.front_back span:first-child{
+    background: url("../../img/mobile/page/up_unselected.png") no-repeat center;
+    background-size: 50%;
+}
+.front_back span:first-child.on{
+    background: url("../../img/mobile/page/up_selected.png") no-repeat center;
+    background-size: 50%;
+}
+.front_back span:last-child{
+    background: url("../../img/mobile/page/down_unselected.png") no-repeat center;
+    background-size: 50%;
+}
+.front_back span:last-child.on{
+    background: url("../../img/mobile/page/down_selected.png") no-repeat center;
+    background-size: 50%;
+}
+.panda_talk{
+    position: absolute;
+    left:22px;
+    bottom:12px;
+    z-index:999;
+}
+.talk_part{
+    position: absolute;
+    right:-22px;
+    top:0;
+}
+.dialog_tips{
+    display:block;
+    position: absolute;
+    top:-80px;
+    right:10px;
+    width:122px;
+    height:82px;
+    text-align: center;
+    background: url("../../img/mobile/page/dialog.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.tips_text{
+    display: inline-block;
+    text-indent: 2em;
+    text-align: justify;
+    font-size:12px;
+    width:96%;
+    height: 55%;
+    line-height:18px;
+    overflow: hidden;
+    margin-top: 10px;
+    padding:0 10px 0 6px;
+    box-sizing: border-box;
+}
+.msg_icon{
+    width:20px;
+    height:20px;
+    background: url("../../img/mobile/page/msg_btn.png") no-repeat center;
+    background-size: 100% 100%;
+
+}
+.list_icon{
+    width:20px;
+    height:20px;
+    margin-top:11px;
+    background: url("../../img/mobile/page/intro_btn.png") no-repeat center;
+    background-size: 100% 100%;
+
+}
+.running_panda{
+    width:100px;
+}
+.panda_shadow{
+    position: absolute;
+    bottom:-12px;
+    left:50%;
+    transform: translate(-50%);
+    width:100px;
+}
+.in_footer{
+    position: absolute;
+    height:68px;
+    width:100%;
+    bottom:0;
+    left:0;
+    background: url("../../img/mobile/page/bottom_bg.png") no-repeat center;
+    background-size: 100% 100%;
+}
+
+/*场景介绍弹出层*/
+.sceneintro_part{
+    display:none;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,.7);
+    z-index:999;
+}
+.sceneclose_btn{
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    background: url("../../img/mobile/page/close_btn.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.scene_title{
+    position: absolute;
+    top:65px;
+    left:0;
+    width:100%;
+    height:180px;
+    background: url("../../img/mobile/page/scene_intro.png") no-repeat center;
+    background-size: 80% 100%;
+}
+.scene_text{
+    width:210px;
+    height:200px;
+    position: absolute;
+    top:266px;
+    left:50%;
+    line-height:24px;
+    text-indent: 2em;
+    text-align: justify;
+    transform: translate(-50%);
+}
+/*二维码弹出层*/
+.qrcode_part{
+    display:none;
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:  url("../../img/mobile/page/qr_bg.png") no-repeat center;
+    background-size: 100% 100%;
+    z-index:999;
+}
+.qrclose_btn{
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    background: url("../../img/mobile/page/close_btn.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.qr_title{
+    position: absolute;
+    top:65px;
+    left:0;
+    width:100%;
+    height:180px;
+    background: url("../../img/mobile/page/qr_title.png") no-repeat center;
+    background-size: 95% 100%;
+}
+.qrcode_share{
+    position: absolute;
+    left:50%;
+    top:280px;
+    transform: translate(-50%);
+    width:153px;
+}
+.qrcode_share img{
+    width:100%;
+}
+/*室内地图弹出层*/
+.indoor_part{
+    display:none;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index:999;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,.7);
+}
+.inclose_btn{
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    background: url("../../img/mobile/page/close_btn.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.inmap_part{
+    position: absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    height:50%;
+    background: url("../../img/mobile/page/mural.png") no-repeat center;
+    background-size:95% 100%;
+}
+/*科普视频弹出层*/
+.sciencevideo_part{
+    display:none;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index:999;
+    width:100%;
+    height:100%;
+    background-color: #efefef;
+}
+.sciencetitle{
+    position:relative;
+    height:7%;
+    width:100%;
+    background-color:#2fd09a;
+}
+.scienceclose_btn{
+    position: absolute;
+    left:15px;
+    top:50%;
+    transform: translateY(-50%);
+    height:21px;
+    width:15px;
+    background:url("../../img/mobile/page/back_icon.png") no-repeat center;
+    background-size: 100%;
+}
+.science_title{
+    position: absolute;
+    left:50%;
+    top:50%;
+    height:18px;
+    width:72px;
+    transform: translate(-50%,-50%);
+}
+.video_play{
+    width:100%;
+    height:93%;
+    overflow-y:auto;
+}
+.video_play>a{
+    display:block;
+    padding:10px 10px 7px 10px;
+    margin-bottom:6px;
+    background-color: #fff;
+    /*height:274px;*/
+    width:100%;
+    color:#000;
+    box-sizing: border-box;
+}
+.video_img{
+    width:100%;
+    height:162px;
+    margin-bottom:11px;
+}
+.video_img img{
+    width:100%;
+    height:100%;
+}
+.video_play>a h4{
+    font-weight: 700;
+    text-align: justify;
+    height:39px;
+    width:100%;
+    font-size: 15px;
+    margin-bottom:13px;
+    overflow: hidden;
+}
+.quarry{
+    height:16px;
+    font-size: 12px;
+    color:#c5c5c5;
+    /*margin-bottom:8px;*/
+}

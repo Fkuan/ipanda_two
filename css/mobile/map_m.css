@@ -1,0 +1,129 @@
+.m_wrapper{
+    width: 100%;
+    height: 100%;
+    position:relative;
+    background: url("../../img/mobile/page/map_bg.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.country_list{
+    position: absolute;
+    left:0.18rem;
+    top:0.2rem;
+    width:2.37rem;
+    height:0.66rem;
+}
+.country_list img{
+    width:100%;
+    height:auto;
+}
+.pop_shade{
+    display:none;
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: #2fd09a;
+    z-index:999;
+}
+.country_title{
+     height:8.9%;
+     width:100%;
+     position:relative;
+     border-bottom:1px solid #9eefd4;
+}
+.close_titlebtn{
+    display:inline-block;
+    position: absolute;
+    left:0.13rem;
+    top:50%;
+    transform: translateY(-50%);
+    width:0.31rem;
+    height:0.31rem;
+}
+.close_titlebtn img{
+    width:100%;
+    height:100%;
+}
+.title_name{
+    display: inline-block;
+    height:0.33rem;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.title_name img{
+    width:auto;
+    height:100%;
+}
+.city_details{
+    height:91.1%;
+    width:100%;
+}
+/*加载中的熊猫层*/
+/*loading样式*/
+.earth-loading-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../img/bg.jpg") no-repeat center;
+    background-size: 100% 100%;
+    z-index: 1000;
+    display: none;
+}
+.earth-loading{
+    width: 100%;
+    height: 3.05rem;
+    position: absolute;
+    top: 2.1rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+.loadPanda{
+    width:1.4rem;
+    height: 1.3rem;
+    background: url("../../img/loading/loading.gif") no-repeat center;
+    background-size: 100%;
+    margin: 0 auto 0.3rem;
+}
+.progress{
+    width:2.16rem;
+    height:0.08rem;
+    margin:0 auto;
+    background: url("../../img/loading/jindutiao.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.progressChange{
+    width: 0;
+    height: 100%;
+    background: #2fd09a;
+    border-radius: 0.07rem;
+    position: relative;
+}
+.Ydian{
+    width:0.17rem;
+    height: 0.17rem;
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    background: url("../../img/loading/dian.png") no-repeat;
+    background-size: 100% 100%;
+}
+.Ydian span{
+    position: absolute;
+    right: 0rem;
+    top: -0.25rem;
+    color: #2fd09a;
+    font-weight: 700;
+}
+.loadPic{
+    width:0.83rem;
+    height: 0.21rem;
+    background: url("../../img/loading/loading.png") no-repeat;
+    background-size: 100%;
+    margin: 0.16rem auto 0;
+}
