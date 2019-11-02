@@ -156,11 +156,11 @@ function initThree() {
   controls.enablePan = false;
   controls.rotateSpeed = 0.5;
   // //鼠标
-  controls.mouseButtons = {
-    LEFT: THREE.MOUSE.ROTATE,
-    MIDDLE: THREE.MOUSE.DOLLY,
-    RIGHT: ''
-  }
+  // controls.mouseButtons = {
+  //   LEFT: THREE.MOUSE.ROTATE,
+  //   MIDDLE: THREE.MOUSE.DOLLY,
+  //   RIGHT: ''
+  // }
   controls.minDistance = 60;
   controls.maxDistance = 100;
 
@@ -487,7 +487,7 @@ var foreignCountries = [
     position: [-109.400091,44.14659],
     url:'img/countryIcon/US.png',
     urlHover:'img/countryIcon/US-hover.png',
-    r:32
+    r:32//31.5~33
   },
   {
     name: "日本",

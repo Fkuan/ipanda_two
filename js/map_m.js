@@ -40,7 +40,7 @@ function initThree() {
     // // controls.maxPolarAngle = Math.PI;
     //
     controls.panSpeed = 0.5;
-    // controls.enablePan = false;
+    controls.enablePan = false;
     controls.rotateSpeed = 0.5;
     // console.log(controls.touches)
     // controls.touches = {
@@ -48,7 +48,7 @@ function initThree() {
     //     TWO: THREE.TOUCH.DOLLY_PAN
     // }
     controls.minDistance = 100;
-    controls.maxDistance = 150;
+    controls.maxDistance = 250;
 
     window.addEventListener("resize", onWindowResize, false) ;
     // window.addEventListener( 'mousewheel', mousewheel, { passive: false} );
