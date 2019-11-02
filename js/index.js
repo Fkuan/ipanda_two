@@ -22,7 +22,7 @@
 //自定义滚动条
 (function ($) {
   $(window).on("load", function () {
-    $(".list-box").mCustomScrollbar({
+    $(".list-content-box").mCustomScrollbar({
       axis: "y",
       autoHideScrollbar: true,
       autoDraggerLength: false,
@@ -78,20 +78,26 @@ $(".div-child-china").click(function () {
 //收起列表
 $(".list-turn-up-button").click(function () {
   $(".list-box").slideUp();
-  $(".list-turn-up-button").hide();
+  // $(".list-turn-up-button").hide();
   $(".list-title-down").addClass("active");
 });
+$(".font-type-djy").on("click",function () {
+   $(".more-font-box").slideToggle();
+   $(".font-down-icon").toggleClass("active");
+});
+
+
 $(".list-title").click(function () {
 
   if($(".list-title-down").hasClass("active")){
     $(".list-box").slideDown();
-    $(".list-turn-up-button").show();
+    // $(".list-turn-up-button").show();
 
 
     $(".list-title-down").removeClass("active");
   }else {
     $(".list-box").slideUp();
-    $(".list-turn-up-button").hide();
+    // $(".list-turn-up-button").hide();
     $(".list-title-down").addClass("active");
   }
 
@@ -203,13 +209,13 @@ function initObject() {
         var foreign = foreignCountries[i].position;
         var foreignImgUrl = foreignCountries[i].url;
         var foreignRadius = foreignCountries[i].r;
-        createSprites(foreign, i , foreignImgUrl , foreignRadius,foreignCountries,4,"外国");
+        createSprites(foreign, i , foreignImgUrl , foreignRadius,foreignCountries,3,"外国");
       }
       // //循环动物园
       for(var a = 0 ; a < zoos.length ; a++){
         var zoo = zoos[a].position;
         var zooRadius = zoos[a].r;
-        createSprites(zoo , a ,"img/countryIcon/zoo-icon1.png",zooRadius,zoos,0.8,"动物园")
+        createSprites(zoo , a ,"img/countryIcon/zoo-icon.png",zooRadius,zoos,0.8,"动物园")
       }
 
     }, function (progress) {
@@ -262,14 +268,14 @@ function onMouseMove(event){
           interObj.material.needsUpdate = true;
         })
       }else {
-        divText.style.display ="none";
-        if(changeObj !== ""){
-          var textureLoader = new THREE.TextureLoader();
-          textureLoader.load(foreignCountries[changeObjIndex].url,function (texture) {
-            changeObj.material.map = texture;
-            changeObj.material.needsUpdate = true;
-          })
-        }
+        // divText.style.display ="none";
+        // if(changeObj !== ""){
+        //   var textureLoader = new THREE.TextureLoader();
+        //   textureLoader.load(foreignCountries[changeObjIndex].url,function (texture) {
+        //     changeObj.material.map = texture;
+        //     changeObj.material.needsUpdate = true;
+        //   })
+        // }
 
 
       }
@@ -279,11 +285,17 @@ function onMouseMove(event){
     divText.style.display ="none";
     if(changeObj !== ""){
       var textureLoader = new THREE.TextureLoader();
-      textureLoader.load(foreignCountries[changeObjIndex].url,function (texture) {
-        changeObj.material.map = texture;
-        changeObj.material.needsUpdate = true;
-        changeObj = "";
+
+      scene.children.forEach(function (spritItem,spritIndex) {
+        if(spritItem.useType === "外国"){
+          textureLoader.load(foreignCountries[spritItem.index].url,function (texture) {
+            spritItem.material.map = texture;
+            spritItem.material.needsUpdate = true;
+            // changeObj = "";
+          })
+        }
       })
+      changeObj = "";
 
     }
   }
@@ -439,70 +451,207 @@ var countries = [{
 ]
 var zoos = [
   {
-    name: "北京动物园",
-    position: [112, 39.56],
+    name: "查看更多",
+    position: [109.014313,27.090929],
     r:31
   },
-  {
-    name: "上海动物园",
-    position: [118.2, 30],
-    r:31
-  },
-  {
-    name: "广州动物园",
-    position: [110, 23.6],
-    r:31
-  },
-  {
-    name: "澳门动物园",
-    position: [111.2, 21.2],
-    r:31
-  },
-  {
-    name: "香港动物园",
-    position: [112.7, 21.8],
-    r:31
-  },
+  // {
+  //   name: "北京动物园",
+  //   position: [112, 39.56],
+  //   r:31
+  // },
+  // {
+  //   name: "上海动物园",
+  //   position: [118.2, 30],
+  //   r:31
+  // },
+  // {
+  //   name: "广州动物园",
+  //   position: [110, 23.6],
+  //   r:31
+  // },
+  // {
+  //   name: "澳门动物园",
+  //   position: [111.2, 21.2],
+  //   r:31
+  // },
+  // {
+  //   name: "香港动物园",
+  //   position: [112.7, 21.8],
+  //   r:31
+  // },
   ];
 var foreignCountries = [
   {
     name: "美国",
-    position: [70,40],
-    url:'img/countryIcon/russia.png',
-    urlHover:'img/countryIcon/russia-hover.png',
-    r:33
+    position: [-109.400091,44.14659],
+    url:'img/countryIcon/US.png',
+    urlHover:'img/countryIcon/US-hover.png',
+    r:32
+  },
+  {
+    name: "日本",
+    position: [130.75, 35.67],
+    url:'img/countryIcon/Japan.png',
+    urlHover:'img/countryIcon/Japan-hover.png',
+    r:31.5
   },
   {
     name: "德国",
     position: [10.27, 51.09],
-    url:'img/countryIcon/russia.png',
-    urlHover:'img/countryIcon/russia-hover.png',
+    url:'img/countryIcon/Germany.png',
+    urlHover:'img/countryIcon/Germany-hover.png',
     r:33
   },
+
   {
     name: "俄罗斯",
-    position: [37.37, 55.45],
-    url:'img/countryIcon/russia.png',
-    urlHover:'img/countryIcon/russia-hover.png',
-    r:33
+    position: [93.119049,64.374669],
+    url:'img/countryIcon/Russia.png',
+    urlHover:'img/countryIcon/Russia-hover.png',
+    r:32
   },
 
   {
     name: "印度尼西亚",
     position: [106.49, -6.09],
-    url:'img/countryIcon/russia.png',
-    urlHover:'img/countryIcon/russia-hover.png',
+    url:'img/countryIcon/Indonesia.png',
+    urlHover:'img/countryIcon/Indonesia-hover.png',
     r:33
   },
-
   {
-    name: "日本",
-    position: [130.75, 35.67],
-    url:'img/countryIcon/russia.png',
-    urlHover:'img/countryIcon/russia-hover.png',
-    r:31.5
+    name: "英国",
+    position: [ -0.054607,51.50428,],
+    url:'img/countryIcon/UK.png',
+    urlHover:'img/countryIcon/UK-hover.png',
+    r:33
+  },
+  {
+    name: "法国",
+    position: [2.316084,48.897723],
+    url:'img/countryIcon/Franck.png',
+    urlHover:'img/countryIcon/Franck-hover.png',
+    r:33
+  },
+  {
+    name: "西班牙",
+    position: [-3.710126,40.420399],
+    url:'img/countryIcon/Spain.png',
+    urlHover:'img/countryIcon/Spain-hover.png',
+    r:33
+  },
+  {
+    name: "奥地利",
+    position: [16.376004,48.213574],
+    url:'img/countryIcon/Austria.png',
+    urlHover:'img/countryIcon/Austria-hover.png',
+    r:33
+  },
+  {
+    name: "比利时",
+    position: [4.350929,50.866032],
+    url:'img/countryIcon/Belgium.png',
+    urlHover:'img/countryIcon/Belgium-hover.png',
+    r:33
+  },
+  {
+    name: "波兰",
+    position: [19.464789,51.76969],
+    url:'img/countryIcon/Poland.png',
+    urlHover:'img/countryIcon/Poland-hover.png',
+    r:33
+  },
+  {
+    name: "意大利",
+    position: [12.497815,41.894926],
+    url:'img/countryIcon/Italy.png',
+    urlHover:'img/countryIcon/Italy-hover.png',
+    r:33
+  },
+  {
+    name: "丹麦",
+    position: [9.058525,56.16829],
+    url:'img/countryIcon/Danish.png',
+    urlHover:'img/countryIcon/Danish-hover.png',
+    r:33
+  },
+  {
+    name: "芬兰",
+    position: [24.893827,62.464075],
+    url:'img/countryIcon/Finland.png',
+    urlHover:'img/countryIcon/Finland-hover.png',
+    r:33
+  },
+  {
+    name: "荷兰",
+    position: [4.856055,52.378728],
+    url:'img/countryIcon/Netherlands.png',
+    urlHover:'img/countryIcon/Netherlands-hover.png',
+    r:33
+  },
+  {
+    name: "马拉西亚",
+    position: [101.699807,3.135245],
+    url:'img/countryIcon/Malaysia.png',
+    urlHover:'img/countryIcon/Malaysia-hover.png',
+    r:33
+  },
+  {
+    name: "加拿大",
+    position: [-122.793954,63.49634],
+    url:'img/countryIcon/Canada.png',
+    urlHover:'img/countryIcon/Canada-hover.png',
+    r:32
+  },
+  {
+    name: "韩国",
+    position: [126.925246,37.618963],
+    url:'img/countryIcon/Korea.png',
+    urlHover:'img/countryIcon/Korea-hover.png',
+    r:32
+  },
+ {
+    name: "泰国",
+    position: [99.847884,15.35992],
+    url:'img/countryIcon/Thailand.png',
+    urlHover:'img/countryIcon/Thailand-hover.png',
+    r:33
+  },
+  {
+    name: "墨西哥",
+    position: [-105.685499,25.29762],
+    url:'img/countryIcon/Mexico.png',
+    urlHover:'img/countryIcon/Mexico-hover.png',
+    r:33
+  },
+  {
+    name: "澳大利亚",
+    position: [127.751746,-21.079288],
+    url:'img/countryIcon/Australia.png',
+    urlHover:'img/countryIcon/Australia-hover.png',
+    r:33
+  },
+  {
+    name: "尼泊尔",
+    position: [84.612391,26.475297],
+    url:'img/countryIcon/Nepal.png',
+    urlHover:'img/countryIcon/Nepal-hover.png',
+    r:33
+  },
+  {
+    name: "印度",
+    position: [75.744893,24.605959],
+    url:'img/countryIcon/India.png',
+    urlHover:'img/countryIcon/India-hover.png',
+    r:33
+  },
+  {
+    name: "新加坡",
+    position: [98.410363,4.068034],
+    url:'img/countryIcon/Singapore.png',
+    urlHover:'img/countryIcon/Singapore-hover.png',
+    r:33
   }
-
 ];
 
 

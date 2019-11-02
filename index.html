@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,9 +11,6 @@
     <script src="js/commen.js"></script>
     <script src="js/three.min.js"></script>
     <script src="js/FBXLoader.js"></script>
-    <script src="js/OBJLoader.js"></script>
-    <script src="js/MTLLoader.js"></script>
-    <script src="js/TGALoader.js"></script>
     <script src="js/OrbitControls.js"></script>
 <!--    <script src="js/TrackballControls.js"></script>-->
     <script src="js/inflate.min.js"></script>
@@ -31,15 +28,6 @@
             left: 0;
         }
     </style>
- <script>
-		if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-
-			
-				window.location.href="map_m.html";
-			
-
-		}
-	</script>
 </head>
 
 <body>
@@ -81,127 +69,223 @@
             <div class="list-title-down"></div>
         </div>
         <!-- 收起箭头 -->
-        <div class="list-turn-up-button"></div>
+
         <div class="list-box">
-            <div class="div-china">
-                <div class="div-child-china">
-                    <p class="font-type on">中国</p>
-                    <span class="slide-down-icon"></span>
-                </div>
-                <div class="jd-box">
-                    <p class="font-type-down font-type-cd">
-                        <a class="panda-cd" target="_blank" href="./vtour/tour.html">
-                            成都大熊猫繁育基地
-                        </a>
-                    </p>
-                    <div class="font-box clearfix">
-                        <p class="font-type-down font-type-djy">
-                            <a class="panda-djy" target="_blank" href="./vtour/tour_djyOutside.html">
-                                中国大熊猫保护研究中心都江堰基地
+            <div class="list-turn-up-button"></div>
+            <div class="list-content-box">
+                <div class="div-china">
+                    <div class="div-child-china">
+                        <p class="font-type on">中国</p>
+                        <span class="slide-down-icon"></span>
+                    </div>
+                    <div class="jd-box">
+                        <p class="font-type-down font-type-cd">
+                            <a class="panda-cd"  href="./vtour/tour.html">
+                                成都大熊猫繁育基地
                             </a>
                         </p>
-                        <div class="more-font-box clearfix">
-                            <p class="font-other-type-down">
-                                <a href="./details.html" target="_blank" class="">
-                                    卧龙神树坪基地
+                        <div class="font-box clearfix">
+                            <p class="font-type-down font-type-djy">
+                                <a class="panda-djy"  href="javascript:;">
+                                    中国大熊猫保护研究中心
                                 </a>
+                                <span class="font-down-icon"></span>
                             </p>
-                            <p class="font-other-type-down">
-                                <a href="./details.html" target="_blank" class=" ">
-                                    雅安碧峰峡基地
-                                </a>
-                            </p>
-                            <p class="font-other-type-down">
-                                <a href="./details.html" target="_blank" class=" ">
-                                    卧龙核桃坪野化培训基地
-                                </a>
-                            </p>
+                            <div class="more-font-box clearfix">
+                                <p class="font-other-type-down">
+                                    <a href="./vtour/tour_djyOutside.html"  class="">
+                                        都江堰基地
+                                    </a>
+                                </p>
+                                <p class="font-other-type-down">
+                                    <a href="./vtour/tour_djyOutside.html"  class="">
+                                        卧龙神树坪基地
+                                    </a>
+                                </p>
+                                <p class="font-other-type-down">
+                                    <a href="./vtour/tour_djyOutside.html"  class=" ">
+                                        雅安碧峰峡基地
+                                    </a>
+                                </p>
+                                <p class="font-other-type-down">
+                                    <a href="./vtour/tour_djyOutside.html"  class=" ">
+                                        卧龙核桃坪野化培训基地
+                                    </a>
+                                </p>
+                            </div>
                         </div>
+                        <div class="other-more">
+                            <span class="other-panda"></span>
+                            <a href="other-more-link">查看更多</a>
+                        </div>
+<!--                        <div class="other-line">其他地区</div>-->
+<!--                        <div class="other-zoo-box clearfix">-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">北京动物园</a>-->
+<!--                            </div>-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">上海动物园</a>-->
+<!--                            </div>-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">太原动物园</a>-->
+<!--                            </div>-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">广州动物园</a>-->
+<!--                            </div>-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">武汉动物园</a>-->
+<!--                            </div>-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">杭州动物园</a>-->
+<!--                            </div>-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">长沙动物园</a>-->
+<!--                            </div>-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">石家庄动物园</a>-->
+<!--                            </div>-->
+<!--                            <div class="other-zoo">-->
+<!--                                <a href="">苏州动物园</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
                     </div>
-                    <div class="other-line">其他地区</div>
-                    <div class="other-zoo-box clearfix">
-                        <div class="other-zoo">
-                            <a href="">北京动物园</a>
-                        </div>
-                        <div class="other-zoo">
-                            <a href="">上海动物园</a>
-                        </div>
-                        <div class="other-zoo">
-                            <a href="">太原动物园</a>
-                        </div>
-                        <div class="other-zoo">
-                            <a href="">广州动物园</a>
-                        </div>
-                        <div class="other-zoo">
-                            <a href="">武汉动物园</a>
-                        </div>
-                        <div class="other-zoo">
-                            <a href="">杭州动物园</a>
-                        </div>
-                        <div class="other-zoo">
-                            <a href="">长沙动物园</a>
-                        </div>
-                        <div class="other-zoo">
-                            <a href="">石家庄动物园</a>
-                        </div>
-                        <div class="other-zoo">
-                            <a href="">苏州动物园</a>
-                        </div>
-                    </div>
+                </div>
+                <div class="country-container">
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-us">
+                            美国
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-japan">
+                            日本
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-russia">
+                            俄罗斯
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-uk">
+                            英国
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-germany">
+                            德国
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-franch">
+                            法国
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-spain">
+                            西班牙
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-austria">
+                            奥地利
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-belgium">
+                            比利时
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-puland">
+                            波兰
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-italy">
+                            意大利
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-danish">
+                            丹麦
+                        </a>
+                    </p>
+
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-finland">
+                            芬兰
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-netherlands">
+                            荷兰
+                        </a>
+                    </p>
+
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-malaysia">
+                            马来西亚
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-canada">
+                            加拿大
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-korea">
+                            韩国
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-indonesia">
+                            印度尼西亚
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-thailand">
+                            泰国
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-mexico">
+                            墨西哥
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-australia">
+                            澳大利亚
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-india">
+                            印度
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-nepal">
+                            尼泊尔
+                        </a>
+                    </p>
+                    <p class="country-font">
+                        <a href="newslist.html" target="_blank" class="other-country country-singapore">
+                            新加坡
+                        </a>
+                    </p>
 
                 </div>
             </div>
-            <div class="country-container">
-                <p class="country-font">
-                    <a href="newslist.html" target="_blank" class="other-country country-us">
-                        美国
-                    </a>
-                </p>
-                <p class="country-font">
-                    <a href="newslist.html" target="_blank" class="other-country country-mexico">
-                        墨西哥
-                    </a>
-                </p>
-                <p class="country-font">
-                    <a href="" class="other-country  country-spain" target="_blank">
-                        西班牙
-                    </a>
-                </p>
-                <p class="country-font">
-                    <a href="" class="other-country country-uk" target="_blank">
-                        英国
-                    </a>
-                </p>
 
-                <p class="country-font">
-                    <a href="" class="other-country country-ger" target="_blank">
-                        德国
-                    </a>
-                </p>
-                <p class="country-font">
-                    <a href="" class="other-country country-austria" target="_blank">
-                        奥地利
-                    </a>
-                </p>
-                <p class="country-font">
-                    <a href="newslist.html" class="other-country country-australia" target="_blank">
-                        澳大利亚
-                    </a>
-                </p>
-                <p class="country-font">
-                    <a href="newslist.html" class="other-country country-netherlands" target="_blank">
-                        荷兰
-                    </a>
-                </p>
-
-            </div>
         </div>
     </div>
     <div class="earth-loading-box">
         <div class="earth-loading">
-            <div class="loadPanda"></div>
+<!--            <div class="loadPanda"></div>-->
             <div class="progress">
                 <div class="progressChange">
+                    <div class="progress-loading"></div>
                     <div class="Ydian"><span>0%</span></div>
                 </div>
             </div>

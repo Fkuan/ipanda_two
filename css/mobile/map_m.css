@@ -127,3 +127,92 @@
     background-size: 100%;
     margin: 0.16rem auto 0;
 }
+
+div#canvas-frame {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+div#canvas-frame canvas{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+}
+/*动物园hover*/
+div#canvas-frame .zoo{
+    min-width:0.5rem;
+    height:0.2rem;
+    line-height:0.2rem;
+    text-align:center;
+    border-radius: 0.2rem;
+    background-color: rgba(0,0,0,0.6);
+    position:absolute;
+    font-size:0.12rem;
+    color:#EEEEEE;
+    font-family: "微軟雅黑";
+    padding:0 0.05rem;
+    display: none;
+    z-index:10;
+    margin-top: -0.3rem;
+    margin-left: -0.17rem;
+}
+
+.label-baohu{
+    width:0.85rem;
+    height:0.39rem;
+    position: absolute;
+    background-image: url("../../img/txt-baohu-bg1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    margin-top: -0.39rem;
+    margin-left: -0.1rem;
+    transition: opacity .5s;
+}
+.label-baohu.active{
+    background-image: url("../../img/txt-baohu-bg1-hover.png");
+}
+.label-fanyu{
+    width:0.85rem;
+    height:0.29rem;
+    position: absolute;
+    background-image: url("../../img/txt-fanyu-bg2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    margin-top: -0.29rem;
+    margin-left: -0.1rem;
+    transition: opacity .5s;
+}
+.label-fanyu.active{
+    background-image: url("../../img/txt-fanyu-bg2-hover.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.labelone-jump{
+    display:block;
+    width:0.85rem;
+    height:0.15rem;
+    position: absolute;
+    top:0;
+    right:0;
+}
+.labelTwo-jump{
+    display:block;
+    width:0.85rem;
+    height:0.15rem;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+
+
